@@ -1,0 +1,25 @@
+{% comment %}
+*  
+*  http://stackoverflow.com/questions/9612235/what-are-some-good-ways-to-implement-breadcrumbs-on-a-jekyll-site
+*  
+{% endcomment %}
+
+<div class="row t20">
+<div class="columns medium-12">
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+ <a href="{{ site.url }}">Home</a>
+ {% assign crumbs = page.url | split: '/' %}
+   {% for crumb in crumbs offset: 1 %}
+    {% if forloop.last %}
+        <a class="current">{{ crumb | replace:'-',' ' }}</a>
+    {% else %}
+        {% if crumbs[1] == "blog" and crumb != "blog" %}
+            <a class="unavailable">{{ crumb | replace:'-',' ' }}</a>
+        {% else %}
+            <a href="{{ site.url }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a>
+        {% endif %}
+    {% endif %}
+  {% endfor %}
+</nav>
+</div>
+</div>

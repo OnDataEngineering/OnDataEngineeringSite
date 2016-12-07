@@ -1,0 +1,30 @@
+<aside>
+    <div class="panel sidebar radius">
+      <p>OnDataEngineering is a collaboratively authored site on the transformation and preparation of data for analytics, licensed under a Creative Commons Licence. Read more <a href="/site/">here</a></p>
+      <p>For details on how to contribute to this site see <a href="/site/contributing/">here</a></p>
+    </div>
+
+    <div class="panel sidebar radius b0">
+      {% if page.createable %}
+        <p>{{ page.create_text }} <a href="#" data-reveal-id="createModal">Create</a> it and send us your proposed page</p>
+      {% endif %}
+
+      {% if page.editable %}
+        <p>{{ page.edit_text }} <a href="{{ site.github_edit_link }}/{{ page.path }}">Edit</a> it and send us your proposed changes</p>
+      {% endif %}
+      
+      {% if page.discussable %}
+        <p>{{ page.discuss_text }} <a href="{{ site.discourse_url }}/t/{{ page.title | slugify }}">Discuss</a> them on its Discourse topic</p>
+      {% endif %}
+
+      {% if page.discourse_category != "" %}
+          <p>{{ page.discourse_category_text }} See the <a href="{{ site.discourse_url }}/c/{{ page.discourse_category | slugify }}">{{ page.discourse_category }}</a> category of our Discourse forums<p>
+      {% endif %}
+
+      <p>
+        {% if page.editable %}
+          See the <a href="{{ site.github_history_link }}/{{ page.path }}">history</a> of this page, or <a href="{{ site.github_view_link }}/{{ page.path }}">view</a> this page in GitHub.
+        {% endif %}
+      </p> 
+    </div>
+</aside>

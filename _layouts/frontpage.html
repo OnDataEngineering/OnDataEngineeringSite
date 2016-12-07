@@ -1,0 +1,85 @@
+---
+layout: default
+format: blog-index
+---
+{% comment %}
+*
+* First check, if widget is empty or not by checking if there is a title
+*
+{% endcomment %}
+<div class="row t50">
+	{% if page.widget1.title %}
+		{% include _frontpage-widget.html widget=page.widget1 %}
+	{% endif %}
+
+	{% if page.widget2.title %}
+		{% include _frontpage-widget.html widget=page.widget2 %}
+	{% endif %}
+
+	{% if page.widget3.title %}
+		{% include _frontpage-widget.html widget=page.widget3 %}
+	{% endif %}
+    
+  	{% if page.widget4.title %}
+		{% include _frontpage-widget.html widget=page.widget4 %}
+	{% endif %}
+</div><!-- /.row -->
+
+
+
+{% comment %}
+*
+* First check, if there is a call for action-button
+*
+{% endcomment %}
+{% if page.callforaction.url contains 'http' %}
+{% assign url = '' %}
+{% else %}
+{% assign url = site.url %}
+{% endif %}
+{% if page.callforaction %}
+    <div class="row t30 b30">
+        <div class="small-12 text-center columns">
+            <a class="button large radius {{ page.callforaction.style }}" href="{{ url }}{{ site.baseurl }}{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} target="_blank" {% endif %}>{{ page.callforaction.text }}</a>
+        </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+{% endif %}
+
+
+
+{% comment %}
+*
+* First check, if there are any posts at all
+*
+{% endcomment %}
+
+{% unless site.posts == empty %}
+  <article>
+    <div class="row b20">
+        <div class="small-12 columns">
+            <h2 class="text-center">Latest News and Updates</h2>
+        </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+    {% for post in site.posts limit:5 %}
+        <div class="row">
+            <div class="medium-12 columns b30">
+                {% include _post_summary.html %}
+            </div><!-- /.medium-12.columns -->
+        </div><!-- /.row -->
+    {% endfor %}
+    
+    {% include _next-previous-buttons-large.html prev-name='Next' archive-name='Blog Archive' archive-url='/blog/archive/' next-name='Previous' next-url='/blog/page2' %}
+  </article>
+{% endunless %}
+
+
+{% comment %}
+*
+* Finally, if there is content, spit it out.
+*
+{% endcomment %}
+
+<div class="row b30">
+    {{ content }}
+</div><!-- /.row -->

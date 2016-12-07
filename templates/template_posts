@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /templates/_posts
+sitemap:
+  exclude: true
+---
+{% include templates/template_posts.md %}

@@ -1,0 +1,25 @@
+---
+# Only the main Sass file needs front matter, rest is included from site.sass.sass_dir
+sitemap:
+  exclude: true
+---
+@charset "utf-8";
+
+@import "foundation_settings";
+@import "normalize";
+
+@import "foundation/components/top-bar";
+@import "foundation/components/breadcrumbs";
+@import "foundation/components/buttons";
+@import "foundation/components/grid";
+@import "foundation/components/keystrokes";
+@import "foundation/components/panels";
+@import 'foundation/components/reveal';
+@import "foundation/components/side-nav";
+@import "foundation/components/tables";
+@import "foundation/components/top-bar";
+@import "foundation/components/type";
+@import "foundation/components/visibility";
+
+@import "foundation_extensions.scss";
+@import "iconfont.scss"; 

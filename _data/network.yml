@@ -1,0 +1,21 @@
+- menu_name: "Credits"
+
+- name: "Jekyll"
+  url: "http://jekyllrb.com/"
+  title: "Jekyll"
+
+- name: "Feeling Responsive"
+  url: "http://phlow.github.io/feeling-responsive/"
+  title: "Feeling Responsive"
+
+- name: "Foundation"
+  url: "http://foundation.zurb.com/"
+  title: "Foundation"
+
+- name: "Icons by Daniel Bruce"
+  url: "http://entypo.com/"
+  title: "Icons by Daniel Bruce"
+  
+- name: "Jekyll Compress HTML"
+  url: "http://jch.penibelst.de/"
+  title: "Jekyll Compress HTML"

@@ -1,0 +1,297 @@
+/* Navigation
+------------------------------------------------------------------- */
+
+// Size and positioning plus box shadow all to match Discourse
+#navigation {
+    -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
+	height: auto !important;   // Should be 63px by default, but may go double height in medium width
+    padding-top: 19px;
+    padding-bottom: 14px;
+}
+
+.top-bar {
+    // Size and position site logo in top bar
+    #site-logo {
+        max-height: 40px;
+        margin-top: -8px;
+    }
+    
+    // Left margin to align logo with content in columns below
+    .title-area {
+        margin-left: 15px;
+    }
+    
+    // Right margin to align with content in columns below (for narrow view)
+    // Wide view handled by extra dividers
+    .toggle-topbar {
+        right: 15px;
+    }
+
+    // Update colour of title for small width to match Menu colour
+    .name span {
+        color: $body-font-color !important;
+    }
+
+    // Right align menu items except when in medium view and they appear under logo
+    .nav-menu-align {
+        float: right !important;
+    }
+    @media #{$medium-only} {
+        .nav-menu-align {
+            float: left !important;
+        }
+    }
+}
+
+// Remove active colouring from narrow mode
+.top-bar-section ul li.active > a {
+	background: $topbar-dropdown-bg;
+    color: $topbar-dropdown-link-color;
+}
+
+// Update triangle on drop down menu items to match text color
+.top-bar-section .has-dropdown > a::after {
+    border-left-color: inherit !important;
+}
+@media #{$topbar-media-query} {
+    .top-bar-section .has-dropdown > a::after {
+        border-top-color: inherit !important;
+        border-left-color: transparent !important;
+    }
+}
+
+
+/* CSS-Classes to add margin at top or bottom
+------------------------------------------------------------------- */
+
+.t10 { margin-top: 10px !important; }
+.t15 { margin-top: 15px !important; }
+.t20 { margin-top: 20px !important; }
+.t30 { margin-top: 30px !important; }
+.t50 { margin-top: 50px !important; }
+.t60 { margin-top: 60px !important; }
+.t70 { margin-top: 70px !important; }
+.t80 { margin-top: 80px !important; }
+.t90 { margin-top: 90px !important; }
+
+.b0  { margin-bottom: 0px !important; }
+.b15 { margin-bottom: 15px !important; }
+.b20 { margin-bottom: 20px !important; }
+.b30 { margin-bottom: 30px !important; }
+.b60 { margin-bottom: 60px !important; }
+
+.l15 { margin-left: 15px !important; }
+.r15 { margin-right: 15px !important; }
+
+.pl20 { padding-left: 20px !important; }
+.pr5  { padding-right: 5px !important; }
+.pr10 { padding-right: 10px !important; }
+.pr20 { padding-right: 20px !important; }
+
+
+/* Breadcrumb
+------------------------------------------------------------------- */
+
+.breadcrumbs > .unavailable {
+    cursor: default !important;
+}
+
+
+/* Meta
+------------------------------------------------------------------- */
+
+#page-meta, #page-meta a {
+    color: $secondary-font-color;
+    font-weight: normal;
+}
+
+
+/* Search
+------------------------------------------------------------------- */
+
+.no-js form#search {
+  display: none;
+}
+
+
+/* Jump to top
+------------------------------------------------------------------- */
+
+#up-to-top {
+    padding: 0px;
+    height: 30px;
+}
+#up-to-top a {
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 3px;
+}
+#up-to-top a:hover {
+    background: $secondary-bg-color;
+}
+
+
+/* Footer
+------------------------------------------------------------------- */
+
+#footer {
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+#footer p,
+#footer li {
+    font-size: $small-font-size;
+    font-weight: 300;
+}
+
+
+/* Sidebar
+------------------------------------------------------------------- */
+
+.sidebar p {
+    font-size: $small-font-size;
+}
+.sidebar p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* Page Heading Buttons
+------------------------------------------------------------------- */
+
+h1 a.button {
+    padding: 0.3rem 1rem 0.3rem 1rem !important;
+    vertical-align: middle;
+    margin: 0 0 0;
+}
+
+
+/* Side-Nav
+------------------------------------------------------------------- */
+
+.side-nav li.title { text-transform: uppercase;}
+.side-nav li { border-top: 1px solid $secondary-border-color;}
+.side-nav li a:not(.button) { border-bottom: 0; padding: 0.4375rem 0rem; }
+.side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus { background: $secondary-bg-color; }
+
+
+/* Tables
+------------------------------------------------------------------- */
+
+td {
+    vertical-align: top;
+}
+
+thead {
+    border-bottom: 1px solid $secondary-border-color;
+}
+
+
+/* Links
+------------------------------------------------------------------- */
+
+footer a,
+aside a,
+article a {
+    font-weight: bold;
+    border-bottom: 1px dotted;
+}
+footer a:hover,
+aside a:hover,
+article a:hover {
+    border-bottom: 2px solid;
+}
+
+h2 a {
+    font-weight: normal;
+    border-bottom: none;
+}
+h2 a:hover {
+    border-bottom: none;
+}
+
+p a.button,
+.button,
+.button:hover {
+    border: 0;
+    color: #fff;
+}
+p.button a {
+    border: 0;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Footnotes
+------------------------------------------------------------------- */
+
+.footnotes:before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 60px;
+    margin-top: -10px;
+    border-bottom: 1px solid $secondary-border-color;
+}
+.footnotes {
+    margin-top: 30px;
+}
+.footnotes ol {
+    font-size: $small-font-size;
+}
+.footnotes p {
+    font-size: inherit;
+    margin-bottom: 0;
+}
+
+
+/* Code
+------------------------------------------------------------------- */
+
+pre {
+    overflow: auto;
+    margin-bottom: rem-calc(20);
+    padding: 5px;
+    background-color: $code-background-color;
+    border-radius: $global-radius;
+}
+pre code {
+    padding: rem-calc(2) rem-calc(5) rem-calc(1) rem-calc(0);
+    border: 0;
+}
+
+code {
+    font-size: rem-calc(14);
+    line-height: 1.5;
+}
+
+
+/* Additional typographical elements
+------------------------------------------------------------------- */
+
+.sans           { font-family: $font-family-sans-serif; }
+.serif          { font-family: $font-family-serif; }
+
+.font-size-h1   { font-size: $h1-font-size; }
+.font-size-h2   { font-size: $h2-font-size; }
+.font-size-h3   { font-size: $h3-font-size; }
+.font-size-h4   { font-size: $h4-font-size; }
+.font-size-h5   { font-size: $h5-font-size; }
+.font-size-small { font-size: $small-font-size; }
+.font-size-p    { font-size: $paragraph-font-size; }
+
+
+/* Page formats
+------------------------------------------------------------------- */
+
+.blog-index h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.two-heading-page h2 {
+    font-size: $h3-font-size;
+}

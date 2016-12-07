@@ -1,0 +1,34 @@
+{% comment %}
+*
+* Produces an HTML list of posts in the side-nav style.
+*
+* Parameters:
+*   posts - the list of posts to display
+*   entries - the maximum number of posts to display
+*   offset - the starting offset within the posts array
+*   
+{% endcomment %}
+
+<ul class="side-nav">
+
+  {% for post in include.posts limit:include.entries offset:include.offset %}
+    <li>
+      <a href="{{ site.url }}{{ post.url }}">
+        <span class="font-size-h5 pr20">{{ post.title }}</span>
+        <span id="page-meta" class="font-size-small">
+          <span class="pr10 icon-calendar"> {{ post.date | date: "%Y-%m-%d" }}</span>
+          {% for category in post.categories %}
+            <span class="pr10 icon-archive"> {{ category }}</span>
+          {% endfor %}
+          {% for tag in post.tags %}
+            <span class="pr10 icon-price-tag"> {{ tag }}</span>
+          {% endfor %}
+          {% assign author = site.data.shared.authors[post.author] %}
+          <span class="pr10 icon-edit"> {{ author.name }}</span>
+        </span>
+      </a>
+    </li>
+  {% endfor %}
+  <li></li>  <!-- added to get line below last line in list -->
+    
+</ul>

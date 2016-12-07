@@ -1,0 +1,64 @@
+---
+layout: page
+format: two-heading-page
+---
+{% include shared/find_tech_vendors_by_titles titles=page.vendors %}
+{% include shared/find_tech_categories_by_titles titles=page.categories %}
+{% include shared/find_tech_relationships page=page %}
+{% include shared/find_project_parent tech=page %}
+{% include shared/find_project_children tech=page %}
+
+<h2>Technology Information</h2>
+<table>
+  <tbody>
+    {% if page.alt-titles %}
+      <tr><td>Other Names</td><td>{{ page.alt-titles | join: ", " }}</td></tr>
+    {% endif %}
+
+    {% if page.vendors %}
+      {% assign vds = "" | split: "" %}
+      {% for v in vendors %}{% capture l %}<a href="{{ v.url }}">{{ v.title }}</a>{% endcapture %}{% assign vds = vds | push: l %}{% endfor %}
+      <tr><td>Vendors</td><td>{{ vds | join: ", " }}</td></tr>
+    {% endif %}
+
+    {% if page.categories.size > 0 %}
+      {% assign cds = "" | split: "" %}
+      {% for c in categories %}{% capture l %}<a href="{{ c.url }}">{{ c.title }}</a>{% endcapture %}{% assign cds = cds | push: l %}{% endfor %}
+      <tr><td>Categories</td><td>{{ cds | join: ", " }}</td></tr>
+    {% endif %}
+
+    <tr><td>Type</td><td>{{ page.type }}</td></tr>
+
+    {% if page.type == "Sub-Project" %}
+      <tr><td>Parent Project</td><td><a href="{{ parent_project.url }}">{{ parent_project.title }}</a></td></tr>
+    {% endif %}
+
+    <tr><td>Last Updated</td><td>{{ page.last-updated }}</td></tr>
+  </tbody>
+</table>
+
+{% if tech-rels.size > 0 %}
+  <h2>Related Technologies</h2>
+  <table>
+    <tbody>
+      {% for tr in tech-rels %}
+        {% assign tds = "" | split: "" %}
+        {% for r in tr[1] %}{% capture l %}<a href="{{ r.url }}">{{ r.title }}</a>{% endcapture %}{% assign tds = tds | push: l %}{% endfor %}
+        <tr><td>{{ tr[0] }}</td><td>{{ tds | join: ", " }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+
+{% if sub_projects.size > 0 %}
+  <h2>Sub-projects</h2>
+  {% include _list-technologies.html list=sub_projects %}
+{% endif %}
+
+{{ content }}
+
+{% include shared/find_posts_by_tag_titles page=page %}
+{% if posts.size > 0 %}
+  <h2>Blog Posts</h2>
+  {% include _list-posts.html posts=posts %}
+{% endif %}

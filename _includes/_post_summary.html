@@ -1,0 +1,9 @@
+<h2><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+            
+{% include _meta_information.html post=post %}               
+
+{{ post.excerpt }}
+
+{% if post.content != post.excerpt %}
+  <p><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="Read {{ post.title escape_once }}"><strong>Read More<span class="icon-chevron-right"></span></strong></a></p>
+{% endif %}

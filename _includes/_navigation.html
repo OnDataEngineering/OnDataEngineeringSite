@@ -1,0 +1,78 @@
+<div id="navigation" class="contain-to-grid sticky">
+  <nav class="top-bar" role="navigation" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <a href="/" title="{{ site.title }}/">
+          <span class="show-for-small-only">{{ site.title }}</span>
+          <img class="show-for-medium-up" id="site-logo" src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ site.logo }}" alt="{{ site.title }}">
+        </a>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="nav-menu-align">
+        <li class="divider"></li>
+
+        {% for link in site.data.navigation %}
+          {% if link.url contains '{{' %}
+            {% assign t = link.url | replace: '{{','' | replace: '}}','' | replace: 'site.','' | replace: ' '.'' %}
+            {% assign link_url = site[t] %}
+          {% else %}
+            {% assign link_url = link.url %}
+          {% endif %}
+
+          {% if link_url contains 'http' %}
+            {% assign domain = '' %}
+          {% elsif link_url == '#' %}
+            {% assign domain = '' %}
+          {% else %}
+            {% assign domain = site.url %}
+          {% endif %}
+
+          {% if link.dropdown == nil and link.dropdown-collection == nil %}
+            <li class="divider"></li>
+            <li{% if link_url == page.url %} class="active"{% endif %}><a href="{{ domain }}{{ site.baseurl }}{{ link_url }}">{{ link.title | escape }}</a></li>
+    
+          {% else %}
+            {% assign link-url-len = link_url | size %}
+            {% assign page-url-trunc = page.url | truncate: link-url-len, '' %}
+
+            <li class="divider"></li>
+            <li class="has-dropdown{% if link_url == page-url-trunc %} active{% endif %}">
+              <a href="{{ domain }}{{ site.baseurl }}{{ link_url }}">{{ link.title | escape }}</a>
+
+              <ul class="dropdown">
+                {% if link.dropdown != nil %}
+                  {% for dropdown_link in link.dropdown %}
+                    {% if dropdown_link.url contains 'http' %}
+                      {% assign domain = '' %}
+                    {% else %}
+                      {% assign domain = site.url %}
+                    {% endif %}
+
+                    <li><a href="{{ domain }}{{ site.baseurl }}{{ dropdown_link.url }}"{% if dropdown_link.url contains 'http' %} target="_blank"{% endif %}>{{ dropdown_link.title | escape }}</a></li>
+                  {% endfor %}
+                {% else %}
+                  {% for coll in site.collections %}
+                    {% if coll.label == link.dropdown-collection %}
+                      {% for c in coll.docs %}
+                        <li><a href="{{ site.url }}{{ site.baseurl }}{{ c.url }}">{% if c.menu-title %}{{ c.menu-title }}{% else %}{{ c.title }}{% endif %}</a></li>
+                      {% endfor %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </ul>
+                  
+            </li>
+          {% endif %}
+        {% endfor %}
+        
+        <!-- Hack to get topbar margins to match content.  Can't put margin on main navigation div as this breaks
+                 the narrow mode menu -->
+        <li class="divider"></li>
+        <li class="divider"></li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->

@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /templates/_tech-vendors
+sitemap:
+  exclude: true
+---
+{% include templates/template_tech-vendors.md %}

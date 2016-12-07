@@ -1,0 +1,27 @@
+- title: "Technologies"
+  url: "/technologies/"
+
+- title: "Tech Categories"
+  url: "/tech-categories/"
+  
+- title: "Tech Vendors"
+  url: "/tech-vendors/"
+
+- title: Blog
+  url: "/blog/"
+
+- title: "Forums"
+  url: "{{ site.discourse_url }}"
+
+- title: "Site"
+  url: "/site/"
+  dropdown:
+  - title: "Site Info"
+    url: "/site/"
+  - title: "Search"
+    url: "/site/search/"   
+  - title: "Content License"
+    url: "/site/content-license/"
+  - title: "Contributing"
+    url: "/site/contributing/"
+  

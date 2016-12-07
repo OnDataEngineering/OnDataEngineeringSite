@@ -1,0 +1,247 @@
+# ASCII-Font › http://patorjk.com/software/taag/#p=display&f=Slant&t=Phlow
+#
+#      _____ _ __          _____      __  __  _                 
+#     / ___/(_) /____     / ___/___  / /_/ /_(_)___  ____ ______
+#     \__ \/ / __/ _ \    \__ \/ _ \/ __/ __/ / __ \/ __ `/ ___/
+#    ___/ / / /_/  __/   ___/ /  __/ /_/ /_/ / / / / /_/ (__  ) 
+#   /____/_/\__/\___/   /____/\___/\__/\__/_/_/ /_/\__, /____/  
+#                                                 /____/        
+#
+# Title of your website
+title: "OnDataEngineering"
+
+# The description is used on homepage and in the footer to quickly describe your website. Use a maximum of 150 characters for SEO-purposes.
+description: "A collaborative site for independent, critical and technical thinking on the use cases, architectural patterns and technologies relating to the transformation and preparation of data for exploitation."
+
+# Main author of the website
+# See > authors.yml
+author: Peter
+
+# This URL is the main address for absolute links. Don't include a slash at the end.
+url: 'http://ondataengineering.net'
+baseurl: ''
+
+# GitHub information
+github_host: https://github.com/OnDataEngineering/OnDataEngineering
+github_edit_link: https://github.com/OnDataEngineering/OnDataEngineering/edit/master
+github_history_link: https://github.com/OnDataEngineering/OnDataEngineering/commits/master
+github_view_link: https://github.com/OnDataEngineering/OnDataEngineering/blob/master
+github_create_link: https://github.com/OnDataEngineering/OnDataEngineering/new/master
+
+# This URL points directly to the images directory making
+# things easier to link to images in posts and templates. It needs a slash at the end.
+#
+# Example: <img src="{{ site.urlimg }}{{ post.image.title }}" />
+# Markdown-Example for posts ![Image Text]({{ site.urlimg }}image.jpg)
+#
+urlimg: 'http://ondataengineering.net/images/'
+
+# Discourse url
+discourse_url: 'http://discourse.ondataengineering.net'
+
+# Logo size is 600x80 pixels
+logo: "logo.png"
+
+# Paginates all X entries
+paginate: 5
+
+# Pagination path › Important for blog page in /blog/ to work
+paginate_path: "blog/page:num"
+
+# Theme works best with Kramdown (using the table of contents function)
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+highlight: rouge
+gems: [jekyll-paginate]
+excerpt_separator: "<!--more-->"
+include: ['.htaccess']
+# Exclude these files from your production _site
+exclude:
+    - .sass-cache
+    - Gemfile
+    - Gemfile.lock
+    - README.md
+    - bower.json
+    - setup.sh
+
+# The language setting is used in /includes/header.html for html-settings
+language: "en"
+
+# Used › default.html front-matter and compress.html
+# Options › http://jch.penibelst.de
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  profile: false
+  ignore:
+    envs: [development]
+
+# Custom collections    
+collections:
+  technologies:
+    output: true
+    permalnk: /technologies/:path/
+  tech-categories:
+    output: true
+    permalink: /tech-categories/:path/
+  tech-vendors:
+    output: true
+    permalnk: /tech-vendors/:path/
+
+    
+#
+#       ____       ____            ____
+#      / __ \___  / __/___ ___  __/ / /_
+#     / / / / _ \/ /_/ __ `/ / / / / __/
+#    / /_/ /  __/ __/ /_/ / /_/ / / /_
+#   /_____/\___/_/  \__,_/\__,_/_/\__/
+#
+# Default Settings
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      author: Peter               # Default value for page author
+      sidebar: left    	  	      # Shows sidebar (valid values are left and right; by default there will be no sidebar)
+      breadcrumb: true            # Show navigation breadcrumb bar under main menu bar at top of screen
+      show_meta: false 	          # Shows metadata values under page title
+      show_nav_buttons: false     # Shows Next, Archive and Previous buttons under page
+      editable: false             # Page is editable via GitHub and enables edit button and sidebar text
+      discussable: false          # Page should have an associated Discourse topic; includes page in Discourse RSS feed and enables discuss button and sidebar text 
+      discourse_category: ""      # Associated discourse category for page (in initial caps without slugificiation); enables sidebar text
+      discourse_comments: false   # Embeds discourse comments at the bottom of the page
+      discourse_counts: false     # Loads discouse topic counts. Only works for pages where discourse_comments is true
+      edit_text: "Spotted a typo or error on this page, or have content to add to it?"                # Default edit text
+      discuss_text: "Have questions to ask on, or changes to propose to the contents of this page?"   # Default discuss text
+      discourse_category_text: ""
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+  -
+    scope:
+      path: "site"
+      type: "pages"
+    values:
+      discussable: true
+      discuss_text: "Have questions, comments or feedback on the contents of this page?"
+      discourse_category: "Meta"
+      discourse_category_text: "Want to discuss anything about this site?"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: page
+      show_meta: true
+      show_nav_buttons: true
+      editable: true
+      discussable: true
+      edit_text: "Spotted a typo or error on this page?"
+      discuss_text: "Have questions, thoughts or comments on this post?"
+  -
+    scope:
+      path: ""
+      type: "technologies"
+    values:
+      layout: technology
+      editable: true
+      discussable: true
+      discourse_category: "Technologies"
+      discourse_category_text: "Want to discuss this or other technologies?"
+  -
+    scope:
+      path: ""
+      type: "tech-categories"
+    values:
+      layout: tech-category
+      editable: true
+      discussable: true
+      discourse_category: "Technologies"
+      discourse_category_text: "Want to discuss this or other technologies?"
+  -
+    scope:
+      path: ""
+      type: "tech-vendors"
+    values:
+      layout: tech-vendor
+      editable: true
+      discussable: true
+      discourse_category: "Technologies"
+      discourse_category_text: "Want to discuss this or other technologies?"
+
+#     _____ __________
+#    / ___// ____/ __ \
+#    \__ \/ __/ / / / /
+#   ___/ / /___/ /_/ /
+#  /____/_____/\____/    Verify Website to Webmaster Tools
+
+# google_author:             ""
+# google_site_verification:  ""
+# bing_webmastertools_id:    ""
+# alexa_verify_id:           ""
+
+
+#       ______            _
+#      / ____/___ __   __(_)________  ____  _____
+#     / /_  / __ `/ | / / / ___/ __ \/ __ \/ ___/
+#    / __/ / /_/ /| |/ / / /__/ /_/ / / / (__  )
+#   /_/    \__,_/ |___/_/\___/\____/_/ /_/____/   Favicon-Crap: Favicons, Chrome, Android & Apple Touch Buttons
+#                                                 More information » https://mathiasbynens.be/notes/touch-icons
+
+favicon-32x32:                          "favicon-32x32.png"
+touch-icon-192x192:                     "touch-icon-192x192.png"
+apple-touch-icon-180x180-precomposed:   "apple-touch-icon-180x180-precomposed.png"
+apple-touch-icon-152x152-precomposed:   "apple-touch-icon-152x152-precomposed.png"
+apple-touch-icon-144x144-precomposed:   "apple-touch-icon-144x144-precomposed.png"
+apple-touch-icon-120x120-precomposed:   "apple-touch-icon-120x120-precomposed.png"
+apple-touch-icon-114x114-precomposed:   "apple-touch-icon-114x114-precomposed.png"
+apple-touch-icon-76x76-precomposed:     "apple-touch-icon-76x76-precomposed.png"
+apple-touch-icon-72x72-precomposed:     "apple-touch-icon-72x72-precomposed.png"
+apple-touch-icon-precomposed:           "apple-touch-icon-precomposed.png"
+msapplication_tileimage:                "msapplication_tileimage.png"               # Size 144x144
+msapplication_tilecolor:                "#fabb00"
+
+
+#       ______                __                __
+#      / ____/___ _________  / /_  ____  ____  / /__
+#     / /_  / __ `/ ___/ _ \/ __ \/ __ \/ __ \/ //_/
+#    / __/ / /_/ / /__/  __/ /_/ / /_/ / /_/ / ,<
+#   /_/    \__,_/\___/\___/_.___/\____/\____/_/|_|      Facebook-Optimization › http://j.mp/fb_optimize
+
+# og_image:                         ""
+# og_locale:                        "en_EN"
+# og_type:                          "website"
+# og_title:                         ""
+# og_description:                   ""
+# og_url:                           ""
+# og_site_name:                     ""
+
+
+#      _____
+#     / ___/____ ___________
+#     \__ \/ __ `/ ___/ ___/
+#    ___/ / /_/ (__  |__  )     More › http://sass-lang.com/
+#   /____/\__,_/____/____/      More › http://jekyllrb.com/docs/assets/#sassscss
+#
+
+sass:
+    sass_dir: _sass
+    style: :compressed
+
+
+#       ___                __      __  _
+#      /   |  ____  ____ _/ /_  __/ /_(_)_________
+#     / /| | / __ \/ __ `/ / / / / __/ / ___/ ___/
+#    / ___ |/ / / / /_/ / / /_/ / /_/ / /__(__  )
+#   /_/  |_/_/ /_/\__,_/_/\__, /\__/_/\___/____/      https://www.google.com/analytics/
+#                        /____/
+#
+# used in _includes/footer_scripts
+
+# google_analytics_tracking_id: 

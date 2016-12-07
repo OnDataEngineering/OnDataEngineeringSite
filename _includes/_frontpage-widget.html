@@ -1,0 +1,19 @@
+<div class="medium-3 columns frontpage-widget">
+    {% if include.widget.url contains '{{' %}
+        {% assign t = include.widget.url | replace: '{{','' | replace: '}}','' | replace: 'site.','' | replace: ' '.'' %}
+        {% assign widget_url = site[t] %}
+    {% else %}
+        {% assign widget_url = include.widget.url %}
+    {% endif %}
+
+	{% capture widget_url %}{% if widget_url contains 'http' %}{{ widget_url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ widget_url }}{% endif %}{% endcapture %}
+	<a href="{{ widget_url }}">
+		{% if include.widget.image %}
+			{% capture widget_image %}{% if include.widget.image contains 'http' %}{{ include.widget.image }}{% else %}{{ site.url }}{{ site.baseurl }}{{ include.widget.image }}{% endif %}{% endcapture %}
+			<img src="{{widget_image}}" width="100%" alt="" />
+		{% endif %}
+	</a>
+	<h2 class="font-size-h3 t10">{{ include.widget.title }}</h2>
+	<p>{{ include.widget.text }}</p>
+</div>
+

@@ -1,0 +1,17 @@
+---
+layout: page
+format: two-heading-page
+---
+{% include shared/find_techs_by_category category=page %}
+
+<h2>Technologies</h2>
+
+{% include _list-technologies.html list=techs %}
+
+{{ content }}
+
+{% include shared/find_posts_by_tag_titles page=page %}
+{% if posts.size > 0 %}
+  <h2>Blog Posts</h2>
+  {% include _list-posts.html posts=posts %}
+{% endif %}

@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /templates/_technologies
+sitemap:
+  exclude: true
+---
+{% include templates/template_technologies.md %}

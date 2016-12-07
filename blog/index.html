@@ -1,0 +1,25 @@
+---
+layout: page
+format: blog-index
+createable: true
+create_text: "Have a new blog post you'd like us to host?"
+path: "_posts"
+noindex: true
+regenerate: true
+---
+{% for post in paginator.posts %}
+    <div class="row">
+        <div class="medium-12 columns b30">
+            {% include _post_summary.html %}
+        </div><!-- /.medium-12.columns -->
+    </div><!-- /.row -->
+{% endfor %}
+
+{% if paginator.previous_page %}
+    {% capture prev-url %}{% if paginator.previous_page == 1 %}/blog/{% else %}/blog/page{{ paginator.previous_page }}/{% endif %}{% endcapture %}
+{% endif %}
+{% if paginator.next_page %}
+    {% capture next-url %}/blog/page{{ paginator.next_page }}/{% endcapture %}
+{% endif %}
+
+{% include _next-previous-buttons-large.html prev-name='Next' prev-url=prev-url archive-name='Blog Archive' archive-url='/blog/archive/' next-name='Previous' next-url=next-url %}

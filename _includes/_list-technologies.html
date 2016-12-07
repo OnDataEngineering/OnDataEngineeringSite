@@ -1,0 +1,26 @@
+{% comment %}
+*   
+*   Possible parameter for this loop:
+*   
+*    › list - the list of technology pages in the correct order
+*   
+*   Example : {% include _list-technologies.html list=site.technologies %}
+*   
+{% endcomment %}
+
+<table>
+  <tbody>
+    {% for technology in include.list %}
+      <tr>
+        <td>
+          {% if technology.type == "Sub-Project" %}
+            {% include shared/find_project_parent tech=technology %}
+            {{ parent_project.title }}&nbsp;>&nbsp;
+          {% endif %}
+          <a href="{{ site.url }}{{ technology.url }}">{{ technology.title }}</a>
+        </td>
+        <td>{{ technology.summary }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

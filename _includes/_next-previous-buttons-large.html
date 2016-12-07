@@ -1,0 +1,36 @@
+{% comment %}
+*
+* This include creates standard next/archive/previous links.
+*
+* Required parameters:
+*   
+*    › prev-url
+*    › prev-name
+*    › archive-url
+*    › archive-name
+*    › next-url
+*    › next-name
+*
+{% endcomment %}
+                
+<div class="row t30">
+    <div class="small-4 columns text-right">
+        {% if include.prev-url %}
+          <a class="button small radius prev" href="{{ site.url }}{{ include.prev-url }}"><span class="icon-chevron-left"></span>{{ include.prev-name }}</a>
+        {% else %}
+          &nbsp;
+        {% endif %}
+    </div>
+
+    <div class="small-4 columns text-center">
+        <a class="button small radius" href="{{ site.url }}{{ include.archive-url }}" title="{{ include.archive-name }}">{{ include.archive-name }}</a>
+    </div>
+
+    <div class="small-4 columns text-left">
+        {% if include.next-url %}
+          <a class="button small radius next" href="{{ site.url }}{{ include.next-url}}">{{ include.next-name }}<span class="icon-chevron-right"></span></a>
+        {% else %}
+          &nbsp;
+        {% endif %}
+    </div>
+</div>

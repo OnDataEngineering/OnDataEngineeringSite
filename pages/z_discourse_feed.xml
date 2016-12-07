@@ -1,0 +1,30 @@
+---
+layout: null
+permalink: /discourse_feed.xml
+regenerate: true
+commment: "Filename is prefixed with z_ so that it comes alphabetically last of all page filenames (excluding directory names).  Otherwise page.content for any pages with later filenames contains raw markup"
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+		<title>{{ site.title | xml_escape }}</title>
+		<description>{{ site.description | xml_escape }}</description>
+		<link>{{ site.url }}{{ site.baseurl }}/</link>
+		{% for page in site.pages %}{% if page.discussable %}
+			<item>
+				<title>{{ page.title | xml_escape }}</title>
+				<link>{{ site.url }}{{ site.baseurl }}{{ page.url }}</link>
+				<description>{% if page.summary %}&lt;p&gt;{{ page.summary | xml_escape }}&lt;/p&gt;{% endif %}{{ page.content | xml_escape }}</description>
+				<discourse_author>{{ site.data.shared.authors[page.author].discourse_username }}</discourse_author>
+			</item>
+		{% endif %}{% endfor %}
+		{% for coll in site.collections %}{% for page in coll.docs %}{% if page.discussable %}
+			<item>
+				<title>{{ page.title | xml_escape }}</title>
+				<link>{{ site.url }}{{ site.baseurl }}{{ page.url }}</link>
+				<description>{% if page.summary %}&lt;p&gt;{{ page.summary | xml_escape }}&lt;/p&gt;{% endif %}{{ page.content | xml_escape }}</description>
+				<discourse_author>{{ site.data.shared.authors[page.author].discourse_username }}</discourse_author>
+			</item>
+			{% endif %}{% endfor %}{% endfor %}
+	</channel>
+</rss>

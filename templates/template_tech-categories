@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /templates/_tech-categories
+sitemap:
+  exclude: true
+---
+{% include templates/template_tech-categories.md %}

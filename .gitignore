@@ -1,0 +1,14 @@
+_site/
+_site.old/
+_bower_components/
+.sass-cache/
+.jekyll-metadata
+_drafts
+_posts
+_technologies
+_tech-categories
+_tech-vendors
+_data/shared
+_includes/templates
+_includes/shared
+images

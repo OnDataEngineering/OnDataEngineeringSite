@@ -1,0 +1,73 @@
+---
+layout: default
+---
+<div class="row t30">
+    <div class="medium-9 columns{% if page.sidebar == NULL %} medium-offset-2 end{% endif %}{% if page.sidebar == "left" %} medium-push-3{% endif %}">
+
+        <article itemscope itemtype="http://schema.org/Article">
+            {% if page.title %}
+            <header>
+              <h1>
+                <span itemprop="name">{{ page.title }}</span>
+                {% if page.editable %}
+                  <a class="button tiny radius" href="{{ site.github_edit_link }}/{{ page.path }}"  title="{{ page.edit_text }} Click here to edit it and send us your proposed changes">edit &nbsp; <img style="height: 13px;" src="/assets/fonts/info-with-circle.svg"></a>
+                {% endif %}
+                {% if page.discussable %}
+                  <a class="button tiny radius" href="{{ site.discourse_url }}/t/{{ page.title | slugify }}" title="{{ page.discuss_text }} Click here to discuss them on its Discourse topic">discuss &nbsp; <img style="height: 13px;" src="/assets/fonts/info-with-circle.svg"></a>
+                {% endif %}
+                {% if page.createable %}
+                  <a class="button tiny radius" href="#" title="{{ page.create_text }} Click here to create it and send us your proposed page" data-reveal-id="createModal">create &nbsp; <img style="height: 13px;" src="/assets/fonts/info-with-circle.svg"></a>
+                {% endif %}
+              </h1>
+            </header>
+            {% endif %}
+
+            {% if page.show_meta %}
+            {% include _meta_information.html post=page %}
+            {% endif %}
+
+            {% if page.summary %}
+            <p class="summary" itemprop="description">
+                {{ page.summary }}
+            </p>
+            {% endif %}
+
+            <span itemprop="articleSection">
+            {{ content }}
+            </span>
+
+            {% if page.show_nav_buttons == true %}
+                {% include _next-previous-buttons.html prev-name='Next' prev-url=page.next.url archive-name='Archive' archive-url='/blog/archive/' next-name='Previous' next-url=page.previous.url %}
+            {% endif %}
+
+            {% if page.discourse_comments == true %}
+            {% include _comments.html %}
+            {% endif %}
+        </article>
+        
+        <div class="row b30"></div>
+    </div><!-- /.medium-8.columns -->
+
+	{% if page.sidebar == "left" %}
+	<div class="medium-3 columns medium-pull-9">
+		{% include _sidebar.html %}
+	</div><!-- /.medium-4.columns -->
+	{% endif %}
+
+	{% if page.sidebar == "right" %}
+	<div class="medium-3 columns">
+		{% include _sidebar.html %}
+	</div><!-- /.medium-4.columns -->
+	{% endif %}
+  </div>
+</div>
+
+{% if page.createable %}
+<div id="createModal" class="reveal-modal text-center" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <p>Thank you for adding new content to the site.<br>To help you get started, please copy the following text to use as a template for the new page you're creating...</p>
+  <textarea rows="4" cols="20" name="createModalTextArea"></textarea> 
+  <a class="button small radius" href="javascript:void(0);" onclick="copyCreateModalText()">Copy To Clipboard</a>
+  <a class="button small radius" href="{{ site.github_create_link }}/{{ page.path }}">Let's Go</a>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+{% endif %}

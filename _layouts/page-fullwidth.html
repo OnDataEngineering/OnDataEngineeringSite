@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="row t30 b30">
+	<div class="medium-12 columns">
+        {% if page.title %}
+            <h1>{{ page.title }}</h1>   
+        {% endif %}
+
+        {% if page.summary %}
+			<p class="summary">{{ page.summary }}</p>
+		{% endif %}
+
+		{{ content }}
+	</div><!-- /.medium-12.columns -->
+</div><!-- /.row -->
+
+
