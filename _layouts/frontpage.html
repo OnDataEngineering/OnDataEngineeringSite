@@ -69,8 +69,6 @@ format: blog-index
         </div><!-- /.row -->
     {% endfor %}
     
-    <p>{{ site.posts.count | inspect }}</p>
-
     {% if site.posts.size > 5 %}
       {% include _next-previous-buttons-large.html prev-name='Next' archive-name='Blog Archive' archive-url='/blog/archive/' next-name='Previous' next-url='/blog/page2' %}
     {% endif %}
