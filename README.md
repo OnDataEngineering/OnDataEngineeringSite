@@ -154,8 +154,8 @@ The steps for changing and re-compiling this font are not currently known, but a
   * redirect
   * default - constructs page from _head.html, _navigation.html, _breadcrumb.html, content, _footer.html, _footer_scripts.html
     * frontpage - constructs page from 3 x _frontpage-widget.html, call for action button, latest posts header, _post_summary.html for most recent posts, _next-previous-buttons-large.html and content - used by top level index page
-    * page-fullwidth - constructs page from page title, summary and content - not currently used
-    * page - constructs page from page title, _meta_information.html, summary, content, _next-previous-buttons.html, _comments.html along with _sidebar.html - used by posts, content indexes, blog index and archive, 404 page and site pages
+    * page-fullwidth - constructs page from page title, description and content - not currently used
+    * page - constructs page from page title, _meta_information.html, description, content, _next-previous-buttons.html, _comments.html along with _sidebar.html - used by posts, content indexes, blog index and archive, 404 page and site pages
       * technology - constructs page from technology information, related technologies, sub-projects (using _list-technologies.html), content and related blog posts (using _list-posts.html) - used by technology pages
       * tech-category - constructs page from table of technologies in category, content and related blog posts (using _list-posts.html) - used by technology category pages
       * tech-vendor - constructs page from vendor information, table of technologies from vendor, content and related blog posts (using _list-posts.html) - used by technology vendor pages

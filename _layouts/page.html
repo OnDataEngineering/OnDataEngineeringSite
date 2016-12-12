@@ -26,9 +26,9 @@ layout: default
             {% include _meta_information.html post=page %}
             {% endif %}
 
-            {% if page.summary %}
-            <p class="summary" itemprop="description">
-                {{ page.summary }}
+            {% if page.description %}
+            <p itemprop="description">
+                {{ page.description }}
             </p>
             {% endif %}
 
