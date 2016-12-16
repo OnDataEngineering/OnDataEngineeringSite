@@ -3,7 +3,7 @@
 # everytime you work locally on the project, you start both config-files, overwriting
 # the first one with the development variables needed.
 #
-# Start development with › $ jekyll serve --config _config.yml,_config_dev.yml
+# Start development with › $ jekyll serve --config _config.yml,_config_dev2.yml
 
 url: 'http://ondataengineering.local'
 urlimg: 'http://ondataengineering.local/images/'
