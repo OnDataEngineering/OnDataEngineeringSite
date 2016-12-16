@@ -1,7 +1,6 @@
 ---
 layout: null
 permalink: /templates/_tech-vendors
-sitemap:
-  exclude: true
+noindex: true
 ---
 {% include templates/template_tech-vendors.md %}

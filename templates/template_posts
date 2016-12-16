@@ -1,7 +1,6 @@
 ---
 layout: null
 permalink: /templates/_posts
-sitemap:
-  exclude: true
+noindex: true
 ---
 {% include templates/template_posts.md %}

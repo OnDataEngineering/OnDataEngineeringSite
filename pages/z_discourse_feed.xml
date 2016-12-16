@@ -3,6 +3,7 @@ layout: null
 permalink: /discourse_feed.xml
 regenerate: true
 commment: "Filename is prefixed with z_ so that it comes alphabetically last of all page filenames (excluding directory names).  Otherwise page.content for any pages with later filenames contains raw markup"
+noindex: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
