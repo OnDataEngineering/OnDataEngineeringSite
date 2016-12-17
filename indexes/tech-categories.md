@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Technology Categories"
+description: "A catalogue of data transformation, data platform and other technologies used within the Data Engineering space, organised by category"
 permalink: "/tech-categories/"
 createable: true
 create_text: "Have a new technology category page to add to this site?"

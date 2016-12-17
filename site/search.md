@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Search"
+description: "Search the OnDataEngineering site..."
 permalink: /site/search/
 ---
 

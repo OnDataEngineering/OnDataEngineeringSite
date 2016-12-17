@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Content License"
+description: "The content of the OnDataEngineering.net site is licensed under a Creative Commons Attribution 4.0 International License"
 permalink: /site/content-license/
 ---
 The content of the OnDataEngineering.net site is copyright the relevant author and is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).

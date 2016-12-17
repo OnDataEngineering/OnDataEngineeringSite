@@ -1,9 +1,10 @@
 ---
 layout: page
 title: "Contributing"
+description: "OnDataEngineering is an open collaborative site, and lives on your contributions and participation in the community around the site.  So welcome, it's good to see you - can we suggest that a good place to start is the site information for more details on who we are and what we're trying to do." 
 permalink: /site/contributing/
 ---
-[OnDataEngineering]({{ site.url }}) is an open collaborative site, and lives on your contributions and participation in the community around the site.  So welcome, it's good to see you - can we suggest that a good place to start is  the [site information](/site/) for more details on who we are and what we're trying to do. 
+[OnDataEngineering]({{ site.url }}) is an open collaborative site, and lives on your contributions and participation in the community around the site.  So welcome, it's good to see you - can we suggest that a good place to start is the [site information](/site/) for more details on who we are and what we're trying to do. 
 
 And before you go any further, can we ask you to sign up to our [Discourse forums]({{ site.discourse_url }}). You'll get updates on changes to the site, notifications of popular discussions, and can use this to discuss anything relating to this site including how you can help and contribute.  While you're there, please take a read of the [welcome post]({{ site.discourse_url }}/t/welcome-to-discourse).
 

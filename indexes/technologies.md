@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Technologies"
+description: "A catalogue of data transformation, data platform and other technologies used within the Data Engineering space"
 permalink: "/technologies/"
 createable: true
 create_text: "Have a new technology page to add to this site?"

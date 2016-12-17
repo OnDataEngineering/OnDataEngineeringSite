@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Site Information"
+description: "OnDataEngineering is a site focused on how to make the right data available in the right form in the right place at the right time to allow users to efficiently exploit it. It is a community owned and authored site, licenced under a Creative Commons Attribution license with the contents available in a public GitHub repository."
 permalink: /site/
 ---
 [OnDataEngineering]({{ site.url }}) is a site focused on how to make the right data available in the right form in the right place at the right time to allow users to efficiently exploit it.  This covers a range of use cases (including the acquisition and staging of data, "big data" preparation and data warehousing) to support any type of exploitation (be it reporting, big data analytics, machine learning or any one of a dozen similar capabilities).

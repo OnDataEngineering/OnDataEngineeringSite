@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Technology Vendors"
+description: "A catalogue of data transformation, data platform and other technologies used within the Data Engineering space, organised by vendor"
 permalink: "/tech-vendors/"
 createable: true
 create_text: "Have a new technology vendor page to add to this site?"
