@@ -134,6 +134,7 @@ defaults:
       discuss_text: "Have questions, comments or feedback on the contents of this page?"
       discourse_category: "Site Feedback"
       discourse_category_text: "Want to discuss anything about this site?"
+      hide_description: true
   -
     scope:
       path: ""

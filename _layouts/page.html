@@ -26,11 +26,13 @@ layout: default
             {% include _meta_information.html post=page %}
             {% endif %}
 
+            {% unless page.hide_description %}
             {% if page.description %}
             <p itemprop="description">
                 {{ page.description }}
             </p>
             {% endif %}
+            {% endunless %}
 
             <span itemprop="articleSection">
             {{ content }}
