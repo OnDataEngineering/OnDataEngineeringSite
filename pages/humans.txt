@@ -14,17 +14,12 @@ Twitter: {{ author.twitter }}{% endif %}
 {% endfor %}
 
 /* THANKS */
-
-Name: Moritz »mo.« Sauer
-Role: Creator of the Theme
-Site: http://mo.phlow.de/
-Twitter: @phlow
-Theme: http://phlow.github.io/feeling-responsive/
-
+{% assign network = site.data.network | where_exp: "item","item.name" %}{% for network_item in network %}{% if network_item.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = site.baseurl %}{% endif %}
+Name: {{ network_item.name }}
+URL: {{ domain }}{{ network_item.url }}
+{% endfor %}
 
 /* SITE */
 
 Last Updated: {{ site.time | date:"%Y/%m/%d" }}
 Standards: HTML5, CSS3
-Software: Sublime Text, Chrome, Jekyll, Git, Imageoptim, JPEGMini, Gulp.js, Sass
-Components: Foundation Framework, Modernizr, jQuery, Backstretch.js, Reveal
