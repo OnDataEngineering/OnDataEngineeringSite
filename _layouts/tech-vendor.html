@@ -11,7 +11,7 @@ format: two-heading-page
       <tr><td>Other Names</td><td>{{ page.alt-titles | join: ", " }}</td></tr>
     {% endif %}
 
-    <tr><td>Last Updated</td><td>{{ page.last-updated }}</td></tr>
+    <tr><td>Last Updated</td><td>{{ page.date | date: "%B %Y" }}</td></tr>
   </tbody>
 </table>
 
