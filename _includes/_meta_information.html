@@ -8,15 +8,17 @@
   <p>
     
     <time class="pr20 icon-calendar" datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished"> {{ post.date | date: "%Y-%m-%d" }}</time>
-        
-    {% for c in categories %}
+
+      {% for c in categories %}
         <span class="pr20 icon-archive"><a href="{{ c.url }}"> {{ c.title }}</a></span>
-    {% endfor %}
+      {% endfor %}
         
-    {% for t in pages %}
+    {% unless include.reduced %}    
+      {% for t in pages %}
         <span class="pr20 icon-price-tag"><a href="{{ t.url }}"> {{ t.title }}</a></span>
-    {% endfor %}
-        
+      {% endfor %}
+    {% endunless %}
+      
     <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name" class="pr20 icon-edit">
         <a href="{{ author.uri }}" target="_blank"> {{ author.name }}</a>
     </span></span>

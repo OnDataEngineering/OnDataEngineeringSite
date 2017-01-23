@@ -2,11 +2,6 @@
 layout: default
 format: blog-index
 ---
-{% comment %}
-*
-* First check, if widget is empty or not by checking if there is a title
-*
-{% endcomment %}
 <div class="row t50">
 	{% if page.widget1.title %}
 		{% include _frontpage-widget.html widget=page.widget1 %}
@@ -23,66 +18,50 @@ format: blog-index
   	{% if page.widget4.title %}
 		{% include _frontpage-widget.html widget=page.widget4 %}
 	{% endif %}
-</div><!-- /.row -->
+</div>
 
-
-
-{% comment %}
-*
-* First check, if there is a call for action-button
-*
-{% endcomment %}
-{% if page.callforaction.url contains 'http' %}
-{% assign url = '' %}
-{% else %}
-{% assign url = site.url %}
-{% endif %}
 {% if page.callforaction %}
-    <div class="row t30 b30">
+    <div class="row t20">
         <div class="small-12 text-center columns">
-            <a class="button large radius {{ page.callforaction.style }}" href="{{ url }}{{ site.baseurl }}{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} target="_blank" {% endif %}>{{ page.callforaction.text }}</a>
-        </div><!-- /.small-12.columns -->
-    </div><!-- /.row -->
+            <a class="button large radius {{ page.callforaction.style }}" href="{{ page.callforaction.url }}">{{ page.callforaction.text }}</a>
+        </div>
+    </div>
 {% endif %}
 
-
-
-{% comment %}
-*
-* First check, if there are any posts at all
-*
-{% endcomment %}
-
-{% unless site.posts == empty %}
-  <article>
-    <div class="row b20">
-        <div class="small-12 columns">
-            <h2 class="text-center">Latest News and Updates</h2>
-        </div><!-- /.small-12.columns -->
-    </div><!-- /.row -->
+<article><div class="row frontpage">
+  <div class="medium-9 columns">
+    <h2 class="text-center b20">Latest News and Posts</h2>
 
     {% for post in site.posts limit:5 %}
-        <div class="row">
-            <div class="medium-12 columns b30">
-                {% include _post_summary.html %}
-            </div><!-- /.medium-12.columns -->
-        </div><!-- /.row -->
+      {% include _post_summary.html reduced-metadata=true %}
     {% endfor %}
     
     {% if site.posts.size > 5 %}
       {% include _next-previous-buttons-large.html prev-name='Next' archive-name='Blog Archive' archive-url='/blog/archive/' next-name='Previous' next-url='/blog/page2' %}
     {% endif %}
+  </div>
 
-  </article>
-{% endunless %}
+  <div class="medium-3 columns text-center">
+    <h2 class="b20">Recent Changes</h2>
+    
+    {% assign count = 0 %}
+    {% assign changes = site.documents | where_exp: "d", "d.collection <> 'posts'" | group_by: "date" | sort: "name" | reverse %}
 
-
-{% comment %}
-*
-* Finally, if there is content, spit it out.
-*
-{% endcomment %}
+    {% for c in changes %}
+      {% if count < 50 %}
+        <h2 class="t30">{{ c.name | date: "%Y-%m-%d" }}</h2>
+        <ul class="no-bullet">
+          {% assign items = c.items | sort: "id" %}
+          {% for t in items %}
+            <li><a href="{{ t.url }}">{{ t.title }}</a></li>
+          {% endfor %}
+        </ul>
+        {% assign count = count | plus: c.items.size | plus: 4 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div></article>
 
 <div class="row b30">
     {{ content }}
-</div><!-- /.row -->
+</div>
