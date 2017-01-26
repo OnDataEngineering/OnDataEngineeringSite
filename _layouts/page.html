@@ -33,9 +33,23 @@ layout: default
             </p>
             {% endif %}
             {% endunless %}
-
+            
             <span itemprop="articleSection">
+
+            {% if page.show_content_header %}
+            {% include _content_header.html %}
+            {% endif %}
+
             {{ content }}
+
+            {% if page.show_related_posts %}
+            {% include shared/find_posts_by_tag_titles page=page %}
+            {% if posts.size > 0 %}
+              <h2>Blog Posts</h2>
+              {% include _list-posts.html posts=posts %}
+            {% endif %}
+            {% endif %}
+
             </span>
 
             {% if page.show_nav_buttons == true %}

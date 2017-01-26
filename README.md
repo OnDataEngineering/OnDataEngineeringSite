@@ -155,10 +155,7 @@ The steps for changing and re-compiling this font are not currently known, but a
   * default - constructs page from _head.html, _navigation.html, _breadcrumb.html, content, _footer.html, _footer_scripts.html
     * frontpage - constructs page from 3 x _frontpage-widget.html, call for action button, latest posts header, _post_summary.html for most recent posts, _next-previous-buttons-large.html and content - used by top level index page
     * page-fullwidth - constructs page from page title, description and content - not currently used
-    * page - constructs page from page title, _meta_information.html, description, content, _next-previous-buttons.html, _comments.html along with _sidebar.html - used by posts, content indexes, blog index and archive, 404 page and site pages
-      * technology - constructs page from technology information, related technologies, sub-projects (using _list-technologies.html), content and related blog posts (using _list-posts.html) - used by technology pages
-      * tech-category - constructs page from table of technologies in category, content and related blog posts (using _list-posts.html) - used by technology category pages
-      * tech-vendor - constructs page from vendor information, table of technologies from vendor, content and related blog posts (using _list-posts.html) - used by technology vendor pages
+    * page - constructs page from page title, _meta_information.html, description, _content_header.html, content, related posts, _next-previous-buttons.html, _comments.html along with _sidebar.html - used by content pags and indexes, blog index and archive, 404 page and site pages
 
 ### Includes
 
@@ -171,6 +168,10 @@ The steps for changing and re-compiling this font are not currently known, but a
 
 * _side_bar - page sidebar - used by page layout
 * _meta_information - blog post meta information line to go under titles - used by page layout
+* _content_header - creates standard content at top of content pages as follows:
+      * technology - technology information, sub-projects (using _list-technologies.html), related technologies
+      * tech-category - table of technologies in category
+      * tech-vendor - vendor information, table of technologies from vendor
 * _comments - discourse comments - used by page layout if comments are turned on for page / collection
 
 * _frontpage-widget - top intro widgets on home page - used by frontpage layout

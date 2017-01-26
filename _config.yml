@@ -77,8 +77,6 @@ compress_html:
   comments: ["<!-- ", " -->"]
   endings: all
   profile: false
-  ignore:
-    envs: [development]
 
 # Custom collections    
 collections:
@@ -111,6 +109,8 @@ defaults:
       sidebar: left    	  	      # Shows sidebar (valid values are left and right; by default there will be no sidebar)
       breadcrumb: true            # Show navigation breadcrumb bar under main menu bar at top of screen
       show_meta: false 	          # Shows metadata values under page title
+      show_content_header: false  # Shows description (if set) and collection specific metadata text sections
+      show_related_posts: false   # Shows related posts text section at end of content
       show_nav_buttons: false     # Shows Next, Archive and Previous buttons under page
       editable: false             # Page is editable via GitHub and enables edit button and sidebar text
       discussable: false          # Page should have an associated Discourse topic; includes page in Discourse RSS feed and enables discuss button and sidebar text 
@@ -153,7 +153,10 @@ defaults:
       path: ""
       type: "technologies"
     values:
-      layout: technology
+      layout: page
+      format: two-heading-page
+      show_content_header: true
+      show_related_posts: true
       editable: true
       discussable: true
       discourse_category: "Technologies"
@@ -163,7 +166,10 @@ defaults:
       path: ""
       type: "tech-categories"
     values:
-      layout: tech-category
+      layout: page
+      format: two-heading-page
+      show_content_header: true
+      show_related_posts: true
       editable: true
       discussable: true
       discourse_category: "Technologies"
@@ -173,7 +179,10 @@ defaults:
       path: ""
       type: "tech-vendors"
     values:
-      layout: tech-vendor
+      layout: page
+      format: two-heading-page
+      show_content_header: true
+      show_related_posts: true
       editable: true
       discussable: true
       discourse_category: "Technologies"

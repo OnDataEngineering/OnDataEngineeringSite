@@ -20,3 +20,11 @@ sass:
 
 # Disable when not in production
 google_analytics_tracking_id:
+
+compress_html:
+  clippings: []
+  comments: []
+  endings: []
+  blanklines: true
+  profile: false
+  startings: []

@@ -1,7 +1,36 @@
----
-layout: page
-format: two-heading-page
----
+<!-- Tech Category metadata -->
+{% if page.collection == "tech-categories" %}
+
+{% include shared/find_techs_by_category category=page %}
+
+<h2>Technologies</h2>
+
+{% include _list-technologies.html list=techs %}
+
+
+<!-- Tech Vendor metadata -->
+{% elsif page.collection == "tech-vendors" %}
+
+{% include shared/find_techs_by_vendor vendor=page %}
+
+<h2>Vendor Information</h2>
+<table>
+  <tbody>
+    {% if page.alt-titles %}
+      <tr><td>Other Names</td><td>{{ page.alt-titles | join: ", " }}</td></tr>
+    {% endif %}
+  </tbody>
+</table>
+
+{% if techs.size > 0 %}
+  <h2>Vendor Technologies</h2>
+  {% include _list-technologies.html list=techs %}
+{% endif %}
+
+
+<!-- Technology metadata -->
+{% elsif page.collection == "technologies" %}
+
 {% include shared/find_tech_vendors_by_titles titles=page.vendors %}
 {% include shared/find_tech_categories_by_titles titles=page.categories %}
 {% include shared/find_tech_relationships page=page %}
@@ -37,6 +66,11 @@ format: two-heading-page
   </tbody>
 </table>
 
+{% if sub_projects.size > 0 %}
+  <h2>Sub-projects</h2>
+  {% include _list-technologies.html list=sub_projects %}
+{% endif %}
+
 {% if tech-rels.size > 0 %}
   <h2>Related Technologies</h2>
   <table>
@@ -50,15 +84,4 @@ format: two-heading-page
   </table>
 {% endif %}
 
-{% if sub_projects.size > 0 %}
-  <h2>Sub-projects</h2>
-  {% include _list-technologies.html list=sub_projects %}
-{% endif %}
-
-{{ content }}
-
-{% include shared/find_posts_by_tag_titles page=page %}
-{% if posts.size > 0 %}
-  <h2>Blog Posts</h2>
-  {% include _list-posts.html posts=posts %}
 {% endif %}

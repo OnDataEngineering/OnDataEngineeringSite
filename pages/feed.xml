@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: compress
 title: "RSS Feed"
 permalink: /feed.xml
 regenerate: true
@@ -16,14 +16,18 @@ noindex: true
 		{% assign docs = site.documents | group_by: "date" | sort: "name" | reverse %}
 		{% for ds in docs %}
 			{% assign docs2 = ds.items | sort: "id" | reverse %}
-			{% for post in docs2 %}
+			{% for page in docs2 %}
 				{% if count < 50 %}
 		<item>
-			<title>{{ post.title | xml_escape }}</title>
-			<link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
-			<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-			<description>{% if post.description %}&lt;p&gt;{{ post.description | xml_escape }}&lt;/p&gt;{% endif %}{{ post.content | xml_escape }}</description>
-			<guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
+			<title>{{ page.title | xml_escape }}</title>
+			<link>{{ site.url }}{{ site.baseurl }}{{ page.url }}</link>
+			<pubDate>{{ page.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+			<description>
+				{% if page.description %}&lt;p&gt;{{ page.description | xml_escape }}&lt;/p&gt;{% endif %}
+				{% if page.show_content_header %}{% capture header %}{% include _content_header.html %}{% endcapture %}{{ header | xml_escape }}{% endif %}
+				{{ page.content | xml_escape }}
+			</description>
+			<guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ page.url }}</guid>
 		</item>
 					{% assign count = count | plus: 1 %}
 				{% endif %}
