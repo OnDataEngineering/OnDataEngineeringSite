@@ -1,13 +1,17 @@
-- menu_name: "Services"
+- menu_name: "Subscribe by"
 
-- name: "RSS"
-  url: "/feed.xml"
-  title: "Subscribe to RSS Feed"
+- name: "Twitter"
+  url: "https://twitter.com/OnDataEng"
+  title: "Follow us on twitter"
+
+- name: "E-Mail"
+  url: "http://eepurl.com/cyQSqv"
+  title: "Subscribe to updates by e-mail"
 
 - name: "Atom"
   url: "/atom.xml"
   title: "Subscribe to Atom Feed"
 
-- name: "sitemap.xml"
-  url: "/sitemap.xml"
-  title: "Sitemap for Google Webmaster Tools"
+- name: "RSS"
+  url: "/feed.xml"
+  title: "Subscribe to RSS Feed"

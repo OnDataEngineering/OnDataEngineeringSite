@@ -22,6 +22,8 @@
     url: "/site/search/"   
   - title: "Content License"
     url: "/site/content-license/"
+  - title: "Subscribe"
+    url: "/site/subscribe/"
   - title: "Contributing"
     url: "/site/contributing/"
   

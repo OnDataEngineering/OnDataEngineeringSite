@@ -121,17 +121,20 @@ The steps for changing and re-compiling this font are not currently known, but a
 
 ### Site Structure
 
-* 404.html - standard error page
-* atom.xml; feed.xml - ATOM and RSS feeds
-* discourse_feed.xml -  RSS feed for Discourse to use for the creation of topics 
-* humans.txt; robots.txt
-* sitemap.xml
+* index.html - homepage; constructs page from _frontpage-widget.html, call for action buttons and list of latest posts and content updates
 * assets/ - static assets
   * css/
   * fonts/
   * img/
   * js/
 * images/ - images from the content repo
+* pages
+  * 404.html - standard error page
+  * atom.xml; feed.xml - ATOM and RSS feeds
+  * humans.txt; robots.txt
+  * sitemap.xml
+  * CNAME, nojekyll - configuration for GitHub pages - sets CNAME and disables Jekyll builds
+  * z_discourse_feed.xml -  RSS feed for Discourse to use for the creation of topics 
 * site/ - site information page
   * content-license/
   * contributing/
@@ -153,7 +156,6 @@ The steps for changing and re-compiling this font are not currently known, but a
 * compress - Jekyll layout that compresses HTML
   * redirect
   * default - constructs page from _head.html, _navigation.html, _breadcrumb.html, content, _footer.html, _footer_scripts.html
-    * frontpage - constructs page from 3 x _frontpage-widget.html, call for action button, latest posts header, _post_summary.html for most recent posts, _next-previous-buttons-large.html and content - used by top level index page
     * page-fullwidth - constructs page from page title, description and content - not currently used
     * page - constructs page from page title, _meta_information.html, description, _content_header.html, content, related posts, _next-previous-buttons.html, _comments.html along with _sidebar.html - used by content pags and indexes, blog index and archive, 404 page and site pages
 

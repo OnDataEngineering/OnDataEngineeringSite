@@ -12,4 +12,6 @@ In the future it is planned for this site to also look at key use cases for diff
 
 This is a community owned and authored site.  All the content on this site is licensed under a Creative Commons Attribution license (see [here](/site/content-license/) for details) and the content of the site is hosted in a public GitHub repository [here]({{ site.github_host }}), with contributions welcomed (see [here](/site/contributing/) for details).
 
+For details on how to get new information added to the site delivered straight to you via e-mail, RSS or Twitter, please see [here](/site/subscribe).
+
 To get in contact with the site administrators please e-mail <admin@ondataengineering.net>
