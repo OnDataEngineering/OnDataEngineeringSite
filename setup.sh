@@ -49,7 +49,7 @@ then
   exit -1
 fi
 
-for i in _drafts _posts _technologies _tech-categories _tech-vendors _templates _data _includes images
+for i in _drafts _posts _technologies _tech-categories _tech-vendors _templates _data _includes images authors.yml
 do
   echo
   echo "Processing $i"
@@ -65,6 +65,11 @@ do
     workdir=$i
     src="../${contentdir}/$i/shared"
     trg="shared"
+  elif [[ $i == "authors.yml" ]]
+  then
+    workdir="_data"
+    src="shared/$i"
+    trg=$i
   else
     workdir="."
     src="${contentdir}/$i"

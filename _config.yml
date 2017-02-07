@@ -42,6 +42,10 @@ discourse_url: 'http://discourse.ondataengineering.net'
 # Logo size is 600x80 pixels
 logo: "/assets/img/logo.png"
 
+# Twitter handle for site
+twitter:
+  username: OnDataEng
+
 # Paginates all X entries
 paginate: 5
 
