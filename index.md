@@ -62,7 +62,7 @@ widget4:
     {% assign changes = site.documents | where_exp: "d", "d.collection <> 'posts'" | group_by: "date" | sort: "name" | reverse %}
 
     {% for c in changes %}
-      {% if count < 50 %}
+      {% if count < 75 %}
         <h2 class="t30">{{ c.name | date: "%Y-%m-%d" }}</h2>
         <ul class="no-bullet">
           {% assign items = c.items | sort: "id" %}
