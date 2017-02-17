@@ -46,7 +46,7 @@
 
     {% if page.vendors %}
       {% assign vds = "" | split: "" %}
-      {% for v in vendors %}{% capture l %}<a href="{{ v.url }}">{{ v.title }}</a>{% endcapture %}{% assign vds = vds | push: l %}{% endfor %}
+      {% for v in vendors %}{% capture l %}{% if v.url %}<a href="{{ v.url }}">{{ v.title }}</a>{% else %}{{ v }}{% endif %}{% endcapture %}{% assign vds = vds | push: l %}{% endfor %}
       <tr><td>Vendors</td><td>{{ vds | join: ", " }}</td></tr>
     {% endif %}
 
@@ -77,7 +77,7 @@
     <tbody>
       {% for tr in tech-rels %}
         {% assign tds = "" | split: "" %}
-        {% for r in tr[1] %}{% capture l %}<a href="{{ r.url }}">{{ r.title }}</a>{% endcapture %}{% assign tds = tds | push: l %}{% endfor %}
+        {% for r in tr[1] %}{% capture l %}{% if r.url %}<a href="{{ r.url }}">{{ r.title }}</a>{% else %}{{ r }}{% endif %}{% endcapture %}{% assign tds = tds | push: l %}{% endfor %}
         <tr><td>{{ tr[0] }}</td><td>{{ tds | join: ", " }}</td></tr>
       {% endfor %}
     </tbody>
