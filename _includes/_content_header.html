@@ -13,18 +13,20 @@
 
 {% include shared/find_techs_by_vendor vendor=page %}
 
+{% if page.alt-titles %}
 <h2>Vendor Information</h2>
 <table>
   <tbody>
-    {% if page.alt-titles %}
       <tr><td>Other Names</td><td>{{ page.alt-titles | join: ", " }}</td></tr>
-    {% endif %}
   </tbody>
 </table>
+{% endif %}
 
 {% if techs.size > 0 %}
+{% unless page.no-vendor-techs %}
   <h2>Vendor Technologies</h2>
   {% include _list-technologies.html list=techs %}
+{% endunless %}
 {% endif %}
 
 
