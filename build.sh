@@ -1,7 +1,7 @@
 set -ex
 
 # Build jekyll for production
-JEKYLL_ENV=production bundle exec jekyll b
+JEKYLL_ENV=production bundle exec jekyll b $1
 
 cd _site
 
