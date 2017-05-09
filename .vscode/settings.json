@@ -6,5 +6,27 @@
         "_site/**": true,
         ".sass-cache/**": true,
         "assets/**": true
-    }
+    },
+    "spellchecker.language": "en_US",
+    "spellchecker.ignoreWordsList": [
+        "blog",
+        "GitHub",
+        "permalink",
+        "Blog",
+        "blogs",
+        "favourite",
+        "organised",
+        "metadata",
+        "username",
+        "TODO",
+        "hadoop"
+    ],
+    "spellchecker.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "spellchecker.ignoreRegExp": [],
+    "spellchecker.ignoreFileExtensions": [],
+    "spellchecker.checkInterval": 5000
 }
