@@ -49,7 +49,7 @@ then
   exit -1
 fi
 
-for i in _drafts _posts _technologies _tech-categories _tech-vendors _templates _data _includes images authors.yml
+for i in _drafts _posts _technologies _tech-categories _tech-vendors _templates _data _includes images redirects authors.yml
 do
   echo
   echo "Processing $i"
