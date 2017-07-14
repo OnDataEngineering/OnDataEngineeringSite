@@ -80,7 +80,7 @@ do
 
   if [[ -f $trg ]]
   then
-    echo "Removing existing file $trg"
+    echo "Removing existing file $workdir/$trg"
     rm $trg
   if [[ $? -ne 0 ]]
     then
@@ -90,7 +90,7 @@ do
 
   if [[ -h $trg ]]
   then 
-    echo "Removing existing symlink $trg"
+    echo "Removing existing symlink $workdir/$trg"
     rmlink $trg
     if [[ $? -ne 0 ]]
     then
@@ -98,7 +98,7 @@ do
     fi
   fi
 
-  echo "Creating link $src $trg"
+  echo "Creating link $src $workdir/$trg"
   link $src $trg
   if [[ $? -ne 0 ]]
   then
