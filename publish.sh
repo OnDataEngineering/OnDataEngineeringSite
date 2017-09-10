@@ -15,7 +15,7 @@ git status
 git config --global user.email "$ODE_COMMIT_EMAIL"
 git config --global user.name "$ODE_COMMIT_NAME"
 git config --global push.default simple
-git commit -m "$COMMIT_MESSAGE"
+git commit -m "$SITE_COMMIT_HASH | $CONTENT_COMMIT_MESSAGE"
 
 # Publish changes
 git push
