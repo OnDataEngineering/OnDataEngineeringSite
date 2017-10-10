@@ -71,6 +71,7 @@ exclude:
     - setup.sh
     - build.sh
     - publish.sh
+    - test.sh
 
 # The language setting is used in /includes/header.html for html-settings
 language: "en"
