@@ -1,4 +1,10 @@
 <aside>
+    {% if page.draft-banner %}
+    <div class="text-center">
+      <a class="button radius alert" href="/site/contributing/">This page is still draft - click here for details on how to help improve it</a>
+    </div>
+    {% endif %}
+
     <div class="panel sidebar radius">
       <p>OnDataEngineering is a collaboratively authored site on the transformation and preparation of data for analytics, licensed under a Creative Commons Licence. Read more <a href="/site/">here</a></p>
       <p>For details on how to contribute to this site see <a href="/site/contributing/">here</a></p>

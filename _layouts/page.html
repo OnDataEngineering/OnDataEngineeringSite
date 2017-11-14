@@ -26,10 +26,6 @@ layout: default
             {% include _meta_information.html post=page %}
             {% endif %}
 
-            {% if page.draft-banner %}
-            <a class="button large radius text-center {{ page.callforaction.style }}" href="/site/contributing/">This page is still draft - click here for details on how to help improve it</a>
-            {% endif %}
-
             {% unless page.hide_description %}
             {% if page.description %}
             <p itemprop="description">
