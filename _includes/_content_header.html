@@ -1,17 +1,5 @@
-<!-- Tech Category metadata -->
-{% if page.collection == "tech-categories" %}
-
-{% unless page.no-category-techs %}
-{% include shared/find_techs_by_category category=page %}
-
-<h2>Technologies</h2>
-
-{% include _list-technologies.html list=techs %}
-{% endunless %}
-
-
 <!-- Tech Vendor metadata -->
-{% elsif page.collection == "tech-vendors" %}
+{% if page.collection == "tech-vendors" %}
 
 {% include shared/find_techs_by_vendor vendor=page %}
 
