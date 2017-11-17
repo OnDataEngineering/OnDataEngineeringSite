@@ -114,18 +114,80 @@ defaults:
       author: Peter               # Default value for page author
       sidebar: left    	  	      # Shows sidebar (valid values are left and right; by default there will be no sidebar)
       breadcrumb: true            # Show navigation breadcrumb bar under main menu bar at top of screen
-      show_meta: false 	          # Shows metadata values under page title
-      show_content_header: false  # Shows description (if set) and collection specific metadata text sections
+      show_post_meta: false 	    # Shows (blog post) metadata values under page title
+      show_description: false     # Shows page meta description (if set) under page meta
+      show_content_header: false  # Shows collection specific metadata section under description
       show_related_posts: false   # Shows related posts text section at end of content
       show_nav_buttons: false     # Shows Next, Archive and Previous buttons under page
-      editable: false             # Page is editable via GitHub and enables edit button and sidebar text
-      discussable: false          # Page should have an associated Discourse topic; includes page in Discourse RSS feed and enables discuss button and sidebar text 
-      discourse_category: ""      # Associated discourse category for page (in initial caps without slugificiation); enables sidebar text
+      editable: false             # Page is editable via GitHub - enables edit button and sidebar text
+      edit_text: "Spotted a typo or error on this page, or have content to add to it?"                # Used for sidebar and button tooltip
+      discussable: false          # Page has an associated Discourse topic - includes page in Discourse RSS feed and enables discuss button and sidebar text 
+      discuss_text: "Have questions to ask on, or changes to propose to the contents of this page?"   # Used for sidebar and button tooltop
+      createable: false           # Page supports the creation of new pages (used for index pages) - enables create button and sidebar text
+      create_text: "Have a new technology page to add to this site?"                                  # Used for sidebar and button tooltop
+      create_path: ""             # Git path to create new pages in
+      discourse_category: false   # Page has an associated Discourse category - enables text in sidebar
+      discourse_category_name: "" # Associated discourse category for page (in initial caps without slugificiation)
+      discourse_category_text: "" # Used for sidebar
       discourse_comments: false   # Embeds discourse comments at the bottom of the page
       discourse_counts: false     # Loads discouse topic counts. Only works for pages where discourse_comments is true
-      edit_text: "Spotted a typo or error on this page, or have content to add to it?"                # Default edit text
-      discuss_text: "Have questions to ask on, or changes to propose to the contents of this page?"   # Default discuss text
-      discourse_category_text: ""
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: page
+      show_post_meta: true
+      show_nav_buttons: true
+      editable: true
+      edit_text: "Spotted a typo or error on this page?"
+      discussable: true
+      discuss_text: "Have questions, thoughts or comments on this post?"
+  -
+    scope:
+      path: ""
+      type: "technologies"
+    values:
+      layout: page
+      format: two-heading-page
+      show_description: true
+      show_content_header: true
+      show_related_posts: true
+      editable: true
+      discussable: true
+      discourse_category: true
+      discourse_category_name: "Technologies"
+      discourse_category_text: "Want to discuss this or other technologies?"
+  -
+    scope:
+      path: ""
+      type: "tech-categories"
+    values:
+      layout: page
+      format: two-heading-page
+      show_description: true
+      show_content_header: true
+      show_related_posts: true
+      editable: true
+      discussable: true
+      discourse_category: true
+      discourse_category_name: "Technologies"
+      discourse_category_text: "Want to discuss this or other technologies?"
+  -
+    scope:
+      path: ""
+      type: "tech-vendors"
+    values:
+      layout: page
+      format: two-heading-page
+      show_description: true
+      show_content_header: true
+      show_related_posts: true
+      editable: true
+      discussable: true
+      discourse_category: true
+      discourse_category_name: "Technologies"
+      discourse_category_text: "Want to discuss this or other technologies?"
   -
     scope:
       path: ""
@@ -139,61 +201,54 @@ defaults:
     values:
       discussable: true
       discuss_text: "Have questions, comments or feedback on the contents of this page?"
-      discourse_category: "Site Feedback"
+      discourse_category: true
+      discourse_category_name: "Site Feedback"
       discourse_category_text: "Want to discuss anything about this site?"
-      hide_description: true
   -
     scope:
-      path: ""
-      type: "posts"
+      path: "indexes/tech-categories.md"
+      type: "pages"
     values:
-      layout: page
-      show_meta: true
-      show_nav_buttons: true
-      editable: true
-      discussable: true
-      edit_text: "Spotted a typo or error on this page?"
-      discuss_text: "Have questions, thoughts or comments on this post?"
+      show_description: true
+      createable: true
+      create_text: "Have a new technology category page to add to this site?"
+      create_path: "_tech-categories"
+      discourse_category: true
+      discourse_category_name: "Technologies"
+      discourse_category_text: "Want to discuss any of these technologies?"
   -
     scope:
-      path: ""
-      type: "technologies"
+      path: "indexes/technologies.md"
+      type: "pages"
     values:
-      layout: page
-      format: two-heading-page
-      show_content_header: true
-      show_related_posts: true
-      editable: true
-      discussable: true
-      discourse_category: "Technologies"
-      discourse_category_text: "Want to discuss this or other technologies?"
+      show_description: true
+      createable: true
+      create_text: "Have a new technology page to add to this site?"
+      create_path: "_technologies"
+      discourse_category: true
+      discourse_category_name: "Technologies"
+      discourse_category_text: "Want to discuss any of these technologies?"
   -
     scope:
-      path: ""
-      type: "tech-categories"
+      path: "indexes/tech-vendors.md"
+      type: "pages"
     values:
-      layout: page
-      format: two-heading-page
-      show_content_header: true
-      show_related_posts: true
-      editable: true
-      discussable: true
-      discourse_category: "Technologies"
-      discourse_category_text: "Want to discuss this or other technologies?"
+      show_description: true
+      createable: true
+      create_text: "Have a new technology vendor page to add to this site?"
+      create_path: "_tech-vendors"
+      discourse_category: true
+      discourse_category_name: "Technologies"
+      discourse_category_text: "Want to discuss any of these technologies?"
   -
     scope:
-      path: ""
-      type: "tech-vendors"
+      path: "blog"
+      type: "pages"
     values:
-      layout: page
-      format: two-heading-page
-      show_content_header: true
-      show_related_posts: true
-      editable: true
-      discussable: true
-      discourse_category: "Technologies"
-      discourse_category_text: "Want to discuss this or other technologies?"
-
+      createable: true
+      create_text: "Have a new blog post you'd like us to host?"
+      create_path: "_posts"
+  
 
 #       ______            _
 #      / ____/___ __   __(_)________  ____  _____

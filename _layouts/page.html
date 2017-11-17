@@ -22,17 +22,17 @@ layout: default
             </header>
             {% endif %}
 
-            {% if page.show_meta %}
+            {% if page.show_post_meta %}
             {% include _meta_information.html post=page %}
             {% endif %}
 
-            {% unless page.hide_description %}
+            {% if page.show_description %}
             {% if page.description %}
             <p itemprop="description">
                 {{ page.description }}
             </p>
             {% endif %}
-            {% endunless %}
+            {% endif %}
             
             <span itemprop="articleSection">
 
@@ -83,7 +83,7 @@ layout: default
   <p>Thank you for adding new content to the site.<br>To help you get started, please copy the following text to use as a template for the new page you're creating...</p>
   <textarea rows="4" cols="20" name="createModalTextArea"></textarea> 
   <a class="button small radius" href="javascript:void(0);" onclick="copyCreateModalText()">Copy To Clipboard</a>
-  <a class="button small radius" href="{{ site.github_create_link }}/{{ page.path }}">Let's Go</a>
+  <a class="button small radius" href="{{ site.github_create_link }}/{{ page.create_path }}">Let's Go</a>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 {% endif %}

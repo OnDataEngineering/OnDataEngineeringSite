@@ -209,7 +209,7 @@ The following are the formats currently used:
 
 Setting page.discussable adds a link to the sidebar and a button next to the page title to view the associated topic in Discourse, and includes the page in the Discourse RSS feed. page.discuss_text controls the text for the sidebar link and tooltop popup on the discuss button.
 
-Setting page.discourse_category adds a link to the sidebar for viewing the associated Discourse Category.  page.discourse_category_text controls the text for this sidebar link.
+Setting page.discourse_category adds a link to the sidebar for viewing the associated Discourse Category.  page.discourse_category_text controls the text for this sidebar link, with page.discourse_category_name specifiying the name of the category
 
 Setting page.discourse_comments to true causes _comments.html to be included at the end of page layout.  This includes a div and a piece of Javascript that calls the Discourse embed.js script to replace the div with an IFrame containing the top comments for the blog post.  See <https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963> for details on how this works.
 
@@ -221,7 +221,7 @@ Setting page.discourse_counts then enables a piece of Javascript in _footer_scri
 
 Setting page.editable adds a link to the sidebar and a button next to the page title to edit the page in GitHib.  page.edit_text controls the text for this link and tooltip popup on the button.
 
-Setting page.createable adds a link to the sidebar and a button next to the page title to add new pages in GitHub.  This is intended to be used on index pages, and requires page.path to be set to the GitHub path to create the new file in.  page.create_text can be used to set the text in the sidebar. 
+Setting page.createable adds a link to the sidebar and a button next to the page title to add new pages in GitHub - this is intended to be used on index pages. page.create_text can be used to set the text in the sidebar.  page.create_path should  be used to set to the GitHub path to create the new file in.
 
 ### Front Page Imagery
 

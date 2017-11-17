@@ -30,7 +30,7 @@
 $(document).on('open.fndtn.reveal', '[data-reveal]', function () {
   request = $.ajax({ 
     type: "GET", 
-    url: "/templates/{{ page.path }}",
+    url: "/templates/{{ page.create_path }}",
     datatype: "text/plain",
     success: function(data)
         {

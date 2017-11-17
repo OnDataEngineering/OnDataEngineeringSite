@@ -23,8 +23,8 @@
         <p>{{ page.discuss_text }} <a href="{{ site.discourse_url }}/t/{{ page.title | slugify }}">Discuss</a> them on its Discourse topic</p>
       {% endif %}
 
-      {% if page.discourse_category != "" %}
-          <p>{{ page.discourse_category_text }} See the <a href="{{ site.discourse_url }}/c/{{ page.discourse_category | slugify }}">{{ page.discourse_category }}</a> category of our Discourse forums<p>
+      {% if page.discourse_category %}
+          <p>{{ page.discourse_category_text }} See the <a href="{{ site.discourse_url }}/c/{{ page.discourse_category_name | slugify }}">{{ page.discourse_category_name }}</a> category of our Discourse forums<p>
       {% endif %}
 
       <p>
