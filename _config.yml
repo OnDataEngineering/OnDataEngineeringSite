@@ -218,6 +218,9 @@ defaults:
       type: "pages"
     values:
       show_description: true
+      show_related_posts: true
+      editable: true
+      discussable: true
       createable: true
       discourse_category: true
   -      
