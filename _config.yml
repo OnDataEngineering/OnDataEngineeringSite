@@ -206,14 +206,27 @@ defaults:
       discourse_category_text: "Want to discuss anything about this site?"
   -
     scope:
-      path: "indexes/tech-categories.md"
+      path: "blog"
+      type: "pages"
+    values:
+      createable: true
+      create_text: "Have a new blog post you'd like us to host?"
+      create_path: "_posts"
+  -
+    scope:
+      path: "indexes"
       type: "pages"
     values:
       show_description: true
       createable: true
+      discourse_category: true
+  -      
+    scope:
+      path: "indexes/tech-categories.md"
+      type: "pages"
+    values:
       create_text: "Have a new technology category page to add to this site?"
       create_path: "_tech-categories"
-      discourse_category: true
       discourse_category_name: "Technologies"
       discourse_category_text: "Want to discuss any of these technologies?"
   -
@@ -221,11 +234,8 @@ defaults:
       path: "indexes/technologies.md"
       type: "pages"
     values:
-      show_description: true
-      createable: true
       create_text: "Have a new technology page to add to this site?"
       create_path: "_technologies"
-      discourse_category: true
       discourse_category_name: "Technologies"
       discourse_category_text: "Want to discuss any of these technologies?"
   -
@@ -233,21 +243,10 @@ defaults:
       path: "indexes/tech-vendors.md"
       type: "pages"
     values:
-      show_description: true
-      createable: true
       create_text: "Have a new technology vendor page to add to this site?"
       create_path: "_tech-vendors"
-      discourse_category: true
       discourse_category_name: "Technologies"
       discourse_category_text: "Want to discuss any of these technologies?"
-  -
-    scope:
-      path: "blog"
-      type: "pages"
-    values:
-      createable: true
-      create_text: "Have a new blog post you'd like us to host?"
-      create_path: "_posts"
   
 
 #       ______            _
