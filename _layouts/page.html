@@ -28,7 +28,7 @@ layout: default
 
             {% if page.show_description %}
             {% if page.description %}
-            <p itemprop="description">
+            <p itemprop="description" {% if page.description_is_meta %}id="page-meta" style="margin-top: -0.8rem"{% endif %}>
                 {{ page.description }}
             </p>
             {% endif %}

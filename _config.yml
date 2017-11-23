@@ -166,6 +166,7 @@ defaults:
       layout: page
       format: two-heading-page
       show_description: true
+      description_is_meta: true
       show_content_header: true
       show_related_posts: true
       editable: true
@@ -218,6 +219,7 @@ defaults:
       type: "pages"
     values:
       show_description: true
+      description_is_meta: true
       show_related_posts: true
       editable: true
       discussable: true
@@ -257,13 +259,14 @@ defaults:
     values:
       format: two-heading-page
       show_description: true
+      description_is_meta: true
       show_related_posts: true
       editable: true
       discussable: true
       discourse_category: true
       discourse_category_name: "Technologies"
       discourse_category_text: "Want to discuss this or other technologies?"
-  
+
 
 #       ______            _
 #      / ____/___ __   __(_)________  ____  _____
