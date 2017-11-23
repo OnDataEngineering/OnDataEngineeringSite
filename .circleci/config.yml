@@ -24,7 +24,9 @@ jobs:
           name: Checkout target
           command: |
             git clone "$ODE_TARGET_REPO" ~/site
+            cd ~/site
             git checkout -B test
+            git push -u origin test
 
       - restore_cache:
           keys:
