@@ -1,5 +1,11 @@
+<!-- Tech Category metadata -->
+{% if page.collection == "tech-categories" %}
+
+<h2>Category Definition</h2>
+
+
 <!-- Tech Vendor metadata -->
-{% if page.collection == "tech-vendors" %}
+{% elif page.collection == "tech-vendors" %}
 
 {% include shared/find_techs_by_vendor vendor=page %}
 
