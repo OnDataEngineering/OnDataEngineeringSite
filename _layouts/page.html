@@ -23,12 +23,12 @@ layout: default
             {% endif %}
 
             {% if page.show_post_meta %}
-            {% include _meta_information.html post=page %}
+            {% include _meta_information.html post=page superscript=true %}
             {% endif %}
 
             {% if page.show_description %}
             {% if page.description %}
-            <p itemprop="description" {% if page.description_is_meta %}id="page-meta" style="margin-top: -0.8rem"{% endif %}>
+            <p itemprop="description"{% if page.description_is_meta %} id="page-meta" style="margin-top: -0.8rem"{% endif %}>
                 {{ page.description }}
             </p>
             {% endif %}
