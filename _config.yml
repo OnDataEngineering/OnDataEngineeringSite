@@ -88,13 +88,13 @@ compress_html:
 collections:
   technologies:
     output: true
-    permalnk: /technologies/:path/
+    permalink: /technologies/:path/
   tech-categories:
     output: true
     permalink: /tech-categories/:path/
   tech-vendors:
     output: true
-    permalnk: /tech-vendors/:path/
+    permalink: /tech-vendors/:path/
 
    
 #
@@ -250,6 +250,19 @@ defaults:
       create_path: "_tech-vendors"
       discourse_category_name: "Technologies"
       discourse_category_text: "Want to discuss any of these technologies?"
+  -
+    scope:
+      path: "tech-categories"
+      type: "pages"
+    values:
+      format: two-heading-page
+      show_description: true
+      show_related_posts: true
+      editable: true
+      discussable: true
+      discourse_category: true
+      discourse_category_name: "Technologies"
+      discourse_category_text: "Want to discuss this or other technologies?"
   
 
 #       ______            _

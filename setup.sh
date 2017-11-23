@@ -34,6 +34,7 @@ ln -snf ../_content/_includes/shared _includes/shared
 ln -snf _content/images images
 ln -snf _content/redirects redirects
 ln -snf _content/indexes indexes
+ln -snf _content/tech-categories tech-categories
 ln -snf shared/authors.yml _data/authors.yml
 
 # Link content and site directories
