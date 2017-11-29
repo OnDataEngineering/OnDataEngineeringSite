@@ -154,7 +154,6 @@ The steps for changing and re-compiling this font are not currently known, but a
 
 * null - used by all pages in pages subdirectory (bar the 404 page)
 * compress - Jekyll layout that compresses HTML
-  * redirect
   * default - constructs page from _head.html, _navigation.html, _breadcrumb.html, content, _footer.html, _footer_scripts.html
     * page-fullwidth - constructs page from page title, description and content - not currently used
     * page - constructs page from page title, _meta_information.html, description, _content_header.html, content, related posts, _next-previous-buttons.html, _comments.html along with _sidebar.html - used by content pags and indexes, blog index and archive, 404 page and site pages
