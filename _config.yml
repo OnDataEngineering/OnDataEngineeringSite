@@ -23,10 +23,10 @@ baseurl: ''
 
 # GitHub information
 github_host: https://github.com/OnDataEngineering/OnDataEngineeringContent
-github_edit_link: https://github.com/OnDataEngineering/OnDataEngineeringContent/edit/master
-github_history_link: https://github.com/OnDataEngineering/OnDataEngineeringContent/commits/master
-github_view_link: https://github.com/OnDataEngineering/OnDataEngineeringContent/blob/master
-github_create_link: https://github.com/OnDataEngineering/OnDataEngineeringContent/new/master
+github_edit_link: https://github.com/OnDataEngineering/OnDataEngineeringContent/edit/main
+github_history_link: https://github.com/OnDataEngineering/OnDataEngineeringContent/commits/main
+github_view_link: https://github.com/OnDataEngineering/OnDataEngineeringContent/blob/main
+github_create_link: https://github.com/OnDataEngineering/OnDataEngineeringContent/new/main
 
 # This URL points directly to the images directory making
 # things easier to link to images in posts and templates. It needs a slash at the end.
