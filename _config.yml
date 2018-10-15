@@ -18,7 +18,7 @@ description: "A collaborative site for independent, critical and technical think
 author: Peter
 
 # This URL is the main address for absolute links. Don't include a slash at the end.
-url: 'http://ondataengineering.net'
+url: 'https://ondataengineering.net'
 baseurl: ''
 
 # GitHub information
@@ -34,7 +34,7 @@ github_create_link: https://github.com/OnDataEngineering/OnDataEngineeringConten
 # Example: <img src="{{ site.urlimg }}{{ post.image.title }}" />
 # Markdown-Example for posts ![Image Text]({{ site.urlimg }}image.jpg)
 #
-urlimg: 'http://ondataengineering.net/images/'
+urlimg: 'https://ondataengineering.net/images/'
 
 # Discourse url
 discourse_url: 'http://discourse.ondataengineering.net'

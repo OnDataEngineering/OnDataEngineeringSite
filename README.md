@@ -1,8 +1,8 @@
 # OnDataEngineering.net Source Code
 
-This is the source code for the [OnDataEngineering](http://OnDataEngineering.net) site.  This repo does not contain the site content (which is available at <https://github.com/OnDataEngineering/OnDataEngineering>), see the instructions below for details of how to link this content in and build the site.
+This is the source code for the [OnDataEngineering](https://ondataengineering.net) site.  This repo does not contain the site content (which is available at <https://github.com/OnDataEngineering/OnDataEngineering>), see the instructions below for details of how to link this content in and build the site.
 
-This is a private repo, and the contents of this repo are therefore not available under licence.  For details of the licensing of the content of the [OnDataEngineering](http://ondataengineering.net) site, please see <http://ondataengineering.net/site/content-license/> or <https://github.com/OnDataEngineering/OnDataEngineering>. 
+This is a private repo, and the contents of this repo are therefore not available under licence.  For details of the licensing of the content of the [OnDataEngineering](https://ondataengineering.net) site, please see <https://ondataengineering.net/site/content-license/> or <https://github.com/OnDataEngineering/OnDataEngineering>. 
 
 ## Building and serving site
 
