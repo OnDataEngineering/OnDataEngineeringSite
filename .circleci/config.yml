@@ -4,10 +4,6 @@ jobs:
     docker:
       - image: circleci/ruby:2.3
       
-    branches:
-      only:
-        - master
-
     environment:
       TZ: "/usr/share/zoneinfo/Europe/London"
 

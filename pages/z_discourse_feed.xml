@@ -14,20 +14,16 @@ noindex: true
 		{% for page in site.pages %}{% if page.discussable %}
 			<item>
 				<title>{{ page.title | xml_escape }}</title>
-				<link>{{ site.url }}{{ site.baseurl }}{{ page.url }}</link>
-				<description>{{ page.content | xml_escape }}</description>
+				<link>{{ site.url | remove_first: "https://" | prepend: "http://" }}{{ site.baseurl }}{{ page.url }}</link>
+				<description>{% include discourse_desc coll="pages" page=page %}</description>
 				<discourse_author>{{ site.data.shared.authors[page.author].discourse_username }}</discourse_author>
 			</item>
 		{% endif %}{% endfor %}
 		{% for coll in site.collections %}{% for page in coll.docs %}{% if page.discussable %}
 			<item>
 				<title>{{ page.title | xml_escape }}</title>
-				<link>{{ site.url }}{{ site.baseurl }}{{ page.url }}</link>
-				<description>
-				    {% if page.description %}&lt;p&gt;{{ page.description | xml_escape }}&lt;/p&gt;{% endif %}
-				    {% if page.show_content_header %}{% capture header %}{% include _content_header.html %}{% endcapture %}{{ header | xml_escape }}{% endif %}
-				    {{ page.content | xml_escape }}
-				</description>
+				<link>{% include discourse_url page=page %}</link>
+				<description>{% include discourse_desc coll=coll.label page=page %}</description>
 				<discourse_author>{{ site.data.shared.authors[page.author].discourse_username }}</discourse_author>
 			</item>
 			{% endif %}{% endfor %}{% endfor %}

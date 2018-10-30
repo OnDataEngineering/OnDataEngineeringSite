@@ -1,0 +1,46 @@
+{%- comment -%}
+Generates the description for a page that makes up the first post on Discourse
+
+Takes the first redirect_from if it exists
+Switches to HTTP for all dates before 15/10/2018 00:00
+
+Pages - Have questions, comments or feedback on the contents of this page?
+Posts - Have questions, thoughts or comments on this post? 
+Technologies - Have questions to ask on, or changes to propose to the contents of this page? 
+Tech Vendors - Have questions to ask on, or changes to propose to the contents of this page? 
+Tech Categories - Have questions to ask on, or changes to propose to the contents of this page? 
+Index Pages - Have questions to ask on, or changes to propose to the contents of this page? 
+
+Parameters:
+  * coll - the name of the collection the page is from (or "pages" if it's not in a collection)
+  * page - the page to generate the description for
+
+Returns:
+  * url
+
+{%- endcomment -%}
+
+{%- capture output -%}
+<p>This is the companion discussion topic for the <a href="{{ site.url }}{{ site.baseurl }}{{ include.page.url }}">{{ include.page.title }}</a> page of the OnDataEngineering site.</p>
+
+{%- case include.coll -%}
+  {%- when "pages" -%} {%- comment -%}site and index pages {%- endcomment -%}
+    <p>Please feel free to ask questions or provide comments and feedback on the page below.</p>
+  {%- when "posts" -%}
+    <p>Please feel free to ask questions or contribute your thoughts and comments on the post below.</p>
+  {%- when "technologies" -%}
+    <p>If you have questions, comments or changes to propose to the contents of this page please feel free to do so below.</p>
+    <p>If you have a more general question about this technology, for example looking for other people's experience, or looking for advise or best practice, then please start a new topic in the <a href="{{ site.discourse_url }}/c/{{ include.page.discourse_category_name | slugify }}">{{ include.page.discourse_category_name }}</a> category of these forums.</p>
+  {%- when "tech-categories" -%}
+    <p>If you have questions, comments or changes to propose to the contents of this page please feel free to do so below.</p>
+    <p>If you have a more general question about this category or any of the technologies referenced on this page, for example looking for other people's experience, or looking for advise or best practice, then please start a new topic in the <a href="{{ site.discourse_url }}/c/{{ include.page.discourse_category_name | slugify }}">{{ include.page.discourse_category_name }}</a> category of these forums.</p>
+  {%- when "tech-vendors" -%}
+    <p>If you have questions, comments or changes to propose to the contents of this page please feel free to do so below.</p>
+    <p>If you have a more general question about this vendor or any of the technologies referenced on this page, for example looking for other people's experience, or looking for advise or best practive, then please start a new topic in the <a href="{{ site.discourse_url }}/c/{{ include.page.discourse_category_name | slugify }}">{{ include.page.discourse_category_name }}</a> category of these forums.</p>
+{%- endcase -%}
+
+<p>If you have more general questions or feedback on the OnDataEngineering site itself, please start a new topic in the <a href="{{ site.discourse_url }}/c/site-feedback">Site Feedback</a> category.</p>
+
+{%- endcapture -%}
+
+{{ output | xml_escape }}

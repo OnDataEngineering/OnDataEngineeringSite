@@ -1,0 +1,31 @@
+{%- comment -%}
+Generates the URL for a page that discourse uses to identify it
+
+Takes the first redirect_from if it exists
+Switches to HTTP for all dates before 15/10/2018 00:00
+
+Parameters:
+  * page - the page to generate the URL for
+
+Returns:
+  * url
+
+{%- endcomment -%}
+
+{%- assign url = include.page.url -%}
+
+{%- if include.page.redirect_from.first -%}
+  {%- assign url = include.page.redirect_from[0] -%}
+{%- elsif include.page.redirect_from -%}
+  {%- assign url = include.page.redirect_from -%}
+{%- else -%}
+  {%- assign url = include.page.url -%}
+{%- endif -%}
+
+{%- assign page_date = include.page.date | date: "%Y-%m-%d" -%}
+
+{%- if page_date < "2018-10-15" -%}
+ {{- site.url | remove_first: "https://" | prepend: "http://" }}{{ site.baseurl }}{{ url -}}
+{%- else -%}
+ {{- site.url }}{{ site.baseurl }}{{ url -}}
+{%- endif -%}
