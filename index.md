@@ -76,15 +76,26 @@ widget4:
   </div>
 
   <div class="medium-6 columns">
-    <h2 class="text-center b20">Latest News and Posts</h2>
 
-    {% for post in site.posts limit:5 %}
-      {% include _post_summary.html reduced-metadata=true %}
+    <h2 class="text-center b20">Latest News</h2>
+
+    {% assign post = site.posts | where_exp: "post", "post.title contains 'News'" | first %}
+    {% include _post_summary.html reduced-metadata=true %}
+
+    <h2 class="text-center b20">Latest Posts</h2>
+
+    {% assign count = 0 %}
+    {% for post in site.posts %}
+      {% if count < 5 %}
+        {% unless post.title contains 'News' %}
+          {% include _post_summary.html reduced-metadata=true %}
+          {% assign count = count | plus: 1 %}
+        {% endunless %}
+      {% endif %}
     {% endfor %}
-    
-    {% if site.posts.size > 5 %}
-      {% include _next-previous-buttons-large.html prev-name='Next' archive-name='Blog Archive' archive-url='/blog/archive/' next-name='Previous' next-url='/blog/page2' %}
-    {% endif %}
+
+    {% include _next-previous-buttons-large.html prev-name='Next' archive-name='Blog Archive' archive-url='/blog/archive/' next-name='Previous' next-url='/blog/page2' %}
+
   </div>
 
   <div class="medium-3 columns text-center">
