@@ -37,7 +37,7 @@ We use MailChimp to manage our mailing list, and your e-mail address is held sec
 
 We use Google Analytics to understand the usage of this site.  This involves setting a number of first party cookies to enable us to differentiate unique users and to see how our users navigate through the site.
 
-We do not send any personal identifiable information to Google. We ask them to anonymise all collected IP addresses (see [here](https://support.google.com/analytics/answer/2763052?hl=en&ref_topic=2919631) for details, and we disable all advertising features (see [here](https://support.google.com/analytics/answer/2700409?hl=en&ref_topic=2919631) for details).
+We do not send any personal identifiable information to Google. We ask them to anonymise all collected IP addresses (see [here](https://support.google.com/analytics/answer/2763052?hl=en&ref_topic=2919631) for details), and we disable all advertising features (see [here](https://support.google.com/analytics/answer/2700409?hl=en&ref_topic=2919631) for details).
 
 Please see the Google Analytics privacy policy [here](https://policies.google.com/privacy) for details on how Google uses your data, and [here](https://support.google.com/analytics/answer/6004245) for more specific details relating to your use of a site that uses Google Analytics.    To opt out of Google Analytics, please install the relevant add-on for your browser from [here](https://tools.google.com/dlpage/gaoptout/).
 
