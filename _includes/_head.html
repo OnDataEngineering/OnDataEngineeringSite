@@ -29,3 +29,25 @@
   {% unless page.style == NULL %}
   <style type="text/css">{{ page.style }}</style>
   {% endunless %}
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#252e39"
+      },
+      "button": {
+        "background": "#14a7d0"
+      }
+    },
+    "theme": "classic",
+    "position": "bottom-right",
+    "content": {
+      "message": "This site uses cookies to analyse how the site is used.  We also use third party widgets that set cookies.",
+      "href": "https://ondataengineering.net/site/privacy-and-cookie-policy/"
+    }
+  })});
+  </script>
