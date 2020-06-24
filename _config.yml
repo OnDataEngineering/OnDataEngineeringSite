@@ -142,8 +142,8 @@ defaults:
       show_nav_buttons: true
       editable: true
       edit_text: "Spotted a typo or error on this page?"
-      discussable: true
-      discuss_text: "Have questions, thoughts or comments on this post?"
+      # discussable: true
+      # discuss_text: "Have questions, thoughts or comments on this post?"
   -
     scope:
       path: ""
@@ -155,10 +155,10 @@ defaults:
       show_content_header: true
       show_related_posts: true
       editable: true
-      discussable: true
-      discourse_category: true
-      discourse_category_name: "Technologies"
-      discourse_category_text: "Want to discuss this or other technologies?"
+      # discussable: true
+      # discourse_category: true
+      # discourse_category_name: "Technologies"
+      # discourse_category_text: "Want to discuss this or other technologies?"
   -
     scope:
       path: ""
@@ -171,10 +171,10 @@ defaults:
       show_content_header: true
       show_related_posts: true
       editable: true
-      discussable: true
-      discourse_category: true
-      discourse_category_name: "Technologies"
-      discourse_category_text: "Want to discuss this or other technologies?"
+      # discussable: true
+      # discourse_category: true
+      # discourse_category_name: "Technologies"
+      # discourse_category_text: "Want to discuss this or other technologies?"
   -
     scope:
       path: ""
@@ -186,10 +186,10 @@ defaults:
       show_content_header: true
       show_related_posts: true
       editable: true
-      discussable: true
-      discourse_category: true
-      discourse_category_name: "Technologies"
-      discourse_category_text: "Want to discuss this or other technologies?"
+      # discussable: true
+      # discourse_category: true
+      # discourse_category_name: "Technologies"
+      # discourse_category_text: "Want to discuss this or other technologies?"
   -
     scope:
       path: ""
@@ -201,11 +201,11 @@ defaults:
       path: "site"
       type: "pages"
     values:
-      discussable: true
-      discuss_text: "Have questions, comments or feedback on the contents of this page?"
-      discourse_category: true
-      discourse_category_name: "Site Feedback"
-      discourse_category_text: "Want to discuss anything about this site?"
+      # discussable: true
+      # discuss_text: "Have questions, comments or feedback on the contents of this page?"
+      # discourse_category: true
+      # discourse_category_name: "Site Feedback"
+      # discourse_category_text: "Want to discuss anything about this site?"
   -
     scope:
       path: "blog"
@@ -223,9 +223,9 @@ defaults:
       description_is_meta: true
       show_related_posts: true
       editable: true
-      discussable: true
+      # discussable: true
       createable: true
-      discourse_category: true
+      # discourse_category: true
   -      
     scope:
       path: "indexes/tech-categories.md"
@@ -233,8 +233,8 @@ defaults:
     values:
       create_text: "Have a new technology category page to add to this site?"
       create_path: "_tech-categories"
-      discourse_category_name: "Technologies"
-      discourse_category_text: "Want to discuss any of these technologies?"
+      # discourse_category_name: "Technologies"
+      # discourse_category_text: "Want to discuss any of these technologies?"
   -
     scope:
       path: "indexes/technologies.md"
@@ -242,8 +242,8 @@ defaults:
     values:
       create_text: "Have a new technology page to add to this site?"
       create_path: "_technologies"
-      discourse_category_name: "Technologies"
-      discourse_category_text: "Want to discuss any of these technologies?"
+      # discourse_category_name: "Technologies"
+      # discourse_category_text: "Want to discuss any of these technologies?"
   -
     scope:
       path: "indexes/tech-vendors.md"
@@ -251,8 +251,8 @@ defaults:
     values:
       create_text: "Have a new technology vendor page to add to this site?"
       create_path: "_tech-vendors"
-      discourse_category_name: "Technologies"
-      discourse_category_text: "Want to discuss any of these technologies?"
+      # discourse_category_name: "Technologies"
+      # discourse_category_text: "Want to discuss any of these technologies?"
   -
     scope:
       path: "tech-categories"
@@ -263,10 +263,10 @@ defaults:
       description_is_meta: true
       show_related_posts: true
       editable: true
-      discussable: true
-      discourse_category: true
-      discourse_category_name: "Technologies"
-      discourse_category_text: "Want to discuss this or other technologies?"
+      # discussable: true
+      # discourse_category: true
+      # discourse_category_name: "Technologies"
+      # discourse_category_text: "Want to discuss this or other technologies?"
 
 
 #       ______            _

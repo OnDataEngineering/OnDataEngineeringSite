@@ -20,11 +20,6 @@ widget3:
   url: '/tech-vendors/'
   image: '/assets/img/widget-tech-vendors.jpg'
   text: 'The technology catalog, organised by vendor'
-widget4:
-  title: "Forums"
-  url: '{{ site.discourse_url }}'
-  image: '/assets/img/widget-forums.png'
-  text: 'Discourse forums for the discussion of data engineering topics and for collaborating on this site.'
 ---
 
 <div class="row t50">
