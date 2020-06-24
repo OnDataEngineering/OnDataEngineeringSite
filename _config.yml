@@ -196,16 +196,16 @@ defaults:
       type: "pages"
     values:
       layout: page
-  -
-    scope:
-      path: "site"
-      type: "pages"
-    values:
-      # discussable: true
-      # discuss_text: "Have questions, comments or feedback on the contents of this page?"
-      # discourse_category: true
-      # discourse_category_name: "Site Feedback"
-      # discourse_category_text: "Want to discuss anything about this site?"
+  # -
+  #   scope:
+  #     path: "site"
+  #     type: "pages"
+  #   values:
+  #     discussable: true
+  #     discuss_text: "Have questions, comments or feedback on the contents of this page?"
+  #     discourse_category: true
+  #     discourse_category_name: "Site Feedback"
+  #     discourse_category_text: "Want to discuss anything about this site?"
   -
     scope:
       path: "blog"
