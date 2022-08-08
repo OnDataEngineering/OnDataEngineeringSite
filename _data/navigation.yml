@@ -10,8 +10,8 @@
 - title: Blog
   url: "/blog/"
 
-- title: "Forums"
-  url: "{{ site.discourse_url }}"
+# - title: "Forums"
+#   url: "{{ site.discourse_url }}"
 
 - title: "Site"
   url: "/site/"

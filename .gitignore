@@ -6,6 +6,7 @@ _content/
 _bower_components/
 .sass-cache/
 .jekyll-metadata
+.jekyll-cache/
 _drafts
 _posts
 _technologies
@@ -17,4 +18,4 @@ _includes/templates
 _includes/shared
 images
 indexes
-tech-categories
+build.log

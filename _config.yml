@@ -18,7 +18,7 @@ description: "A collaborative site for independent, critical and technical think
 author: Peter
 
 # This URL is the main address for absolute links. Don't include a slash at the end.
-url: 'https://ondataengineering.net'
+url: 'https://ondataengineering.github.io'
 baseurl: ''
 
 # GitHub information
@@ -34,7 +34,7 @@ github_create_link: https://github.com/OnDataEngineering/OnDataEngineeringConten
 # Example: <img src="{{ site.urlimg }}{{ post.image.title }}" />
 # Markdown-Example for posts ![Image Text]({{ site.urlimg }}image.jpg)
 #
-urlimg: 'https://ondataengineering.net/images/'
+urlimg: 'https://ondataengineering.github.io/images/'
 
 # Discourse url
 discourse_url: 'http://discourse.ondataengineering.net'
@@ -73,6 +73,8 @@ exclude:
     - build.sh
     - publish.sh
     - test.sh
+    - vs.code-workspace
+    - redirects.json
 
 # The language setting is used in /includes/header.html for html-settings
 language: "en"
@@ -311,4 +313,4 @@ sass:
 #
 # used in _includes/footer_scripts
 
-google_analytics_tracking_id: 'UA-88912556-1'
+google_analytics_tracking_id: 
