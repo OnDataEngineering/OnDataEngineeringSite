@@ -2,7 +2,13 @@
 # Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)
 # and commit this file to your remote git repository to share the goodness with others.
 
+additionalRepositories:
+  - url: https://github.com/OnDataEngineering/OnDataEngineeringContent
+    checkoutLocation: OnDataEngineeringContent
+  - url: https://github.com/OnDataEngineering/ondataengineering.github.io
+    checkoutLocation: OnDataEngineeringCompiled
+
 tasks:
-  - init: bundle install
-
-
+  - init: | 
+      bundle install
+      ./setup.sh ../OnDataEngineeringContent ../OnDataEngineeringCompiled
